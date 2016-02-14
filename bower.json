@@ -1,0 +1,11 @@
+{
+    "name": "LvChuangKe",
+    "description": "LvChuangKe Description",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "vendor/bower_dl",
+        "test",
+        "tests"
+    ]
+}
