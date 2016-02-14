@@ -1,3 +1,19 @@
+# Log
+
+1. github的操作。
+```
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:wedojava/www.lvchuangke.com.git
+git push -u origin master
+```
+2. 服务器上的操作
+Just copy your `/root/.ssh/id_rsa.pub` content as new github SSH key (https://github.com/settings/ssh).
+
+If you does't have `id_rsa.pub`, just create it with command `ssh-keygen -t rsa`.
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
