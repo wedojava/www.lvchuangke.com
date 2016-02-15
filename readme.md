@@ -18,6 +18,13 @@ If you does't have `id_rsa.pub`, just create it with command `ssh-keygen -t rsa`
 
 或者直接一行命令`sudo yum install nodejs npm` 或 `sudo yum install nodejs npm --enablerepo=epel`不过这样安装的是0.10.0版本的。
 
+### 生成env文件
+```
+php -r "copy('.env.example', '.env');"
+php artisan optimize // 可选，Optimize the framework for better performance
+php artisan key:generate
+```
+
 ## 开发端的操作
 
 ### 安装gulp
