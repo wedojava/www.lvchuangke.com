@@ -14,6 +14,13 @@ class CreateCasesTable extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nickname')->unique();
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('QQ');
+            $table->string('weixin');
+            $table->string('weibo');
+            $table->string('detail');
             $table->timestamps();
         });
     }

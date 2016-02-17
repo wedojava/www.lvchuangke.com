@@ -14,6 +14,10 @@ class CreateSuccessfulCasesTable extends Migration
     {
         Schema::create('successful_cases', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('caseTitle');
+            $table->string('caseDetail');
+            $table->string('lawyer');
+            $table->string('lawOffice');
             $table->timestamps();
         });
     }

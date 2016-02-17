@@ -14,6 +14,9 @@ class CreateLawOfficesTable extends Migration
     {
         Schema::create('law_offices', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('officeName')->unique();
+            $table->string('telephone')->unique();
+            $table->string('description');
             $table->timestamps();
         });
     }
