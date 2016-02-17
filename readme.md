@@ -65,3 +65,15 @@ bower install datatables-plugins --save
     npm install
 
 
+## 安装依赖包
+有很多 PHP 包可用于将 Markdown 转化为 HTML。这里我们使用 Michel Fortin 提供的包 [SmartyPants](http://laravelacademy.org/tags/smartypants)，在本地主机上使用 Composer 安装下面两个依赖包：
+
+    composer require michelf/php-markdown 
+    composer require "michelf/php-smartypants=1.6.0-beta1"
+
+如果报错：
+
+    Failed to decode response: zlib_decode(): data error
+    Retrying with degraded mode, check https://getcomposer.org/doc/articles/troubleshooting.md#degraded-mode for more info
+
+可以尝试运行： `composer self-update` 。
