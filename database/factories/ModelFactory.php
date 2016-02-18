@@ -10,7 +10,7 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-$faker = Faker\Factory::create();
+// $faker = Faker\Factory::create();
 
 // $factory->define(App\User::class, function (Faker\Generator $faker) {
 //     return [
@@ -21,10 +21,10 @@ $faker = Faker\Factory::create();
 //     ];
 // });
 
-$factory->define(App\LawCase::class, function () {
+$factory->define(App\LawCase::class, function (Faker\Generator $faker) {
     return [
         'nickname' => $faker->userName,
-        'telephone' => $faker->cellNumber,
+        'telephone' => $faker->phoneNumber,
         'email' => $faker->safeEmail,
         'QQ' => $faker->randomNumber,
         'weixin' => $faker->randomNumber,
@@ -33,10 +33,11 @@ $factory->define(App\LawCase::class, function () {
     ];
 });
 
-$factory->define(App\LawOffice::class, function () {
+
+$factory->define(App\Lawyer::class, function (Faker\Generator $faker) {
     return [
         'username' => $faker->name,
-        'telephone' => $faker->cellNumber,
+        'telephone' => $faker->phoneNumber,
         'email' => $faker->safeEmail,
         'QQ' => $faker->randomNumber,
         'weixin' => $faker->randomNumber,
@@ -45,20 +46,19 @@ $factory->define(App\LawOffice::class, function () {
     ];
 });
 
-$factory->define(App\LawOffice::class, function () {
+$factory->define(App\LawOffice::class, function (Faker\Generator $faker) {
     return [
         'officeName' => $faker->sentence(2),
-        'telephone' => $faker->cellNumber,
+        'telephone' => $faker->phoneNumber,
         'description_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
     ];
 });
 
-$factory->define(App\SuccessfulCase::class, function () {
+$factory->define(App\SuccessfulCase::class, function (Faker\Generator $faker) {
     return [
         'caseTitle' => $faker->sentence(mt_rand(3, 10)),
         'caseDetail_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
         'lawyer' => $faker->name,
         'lawOffice' => $faker->sentence(2),
-        'telephone' => $faker->cellNumber,
     ];
 });

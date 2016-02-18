@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LawOfficeTableSeeder::class);
         $this->call(LawyerTableSeeder::class);
         $this->call(SuccessfulCaseTableSeeder::class);
-        $this->call(AboutTableSeeder::class);
         
 		Model::reguard();
     }

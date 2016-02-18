@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Services\Markdowner;
 use Illuminate\Database\Eloquent\Model;
 
 class SuccessfulCase extends Model
