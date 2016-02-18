@@ -15,10 +15,10 @@ class CreateLawyersTable extends Migration
         Schema::create('lawyers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username')->unique();
-            $table->string('telephone')->unsigned();
-            $table->string('email')->unsigned()->unique();
-            $table->string('QQ')->unsigned();
-            $table->string('weixin')->unsigned();
+            $table->string('telephone');
+            $table->string('email')->unique();
+            $table->string('QQ');
+            $table->string('weixin');
             $table->string('weibo');
             $table->text('description');
             $table->timestamps();
