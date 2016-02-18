@@ -5,7 +5,7 @@ namespace App;
 use App\Services\Markdowner;
 use Illuminate\Database\Eloquent\Model;
 
-class Case extends Model
+class LawCase extends Model
 {
     /**
 	 * Set the HTML content automatically when the raw content is set

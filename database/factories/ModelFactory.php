@@ -21,7 +21,7 @@ $faker = Faker\Factory::create();
 //     ];
 // });
 
-$factory->define(App\Case::class, function () {
+$factory->define(App\LawCase::class, function () {
     return [
         'nickname' => $faker->userName,
         'telephone' => $faker->cellNumber,
