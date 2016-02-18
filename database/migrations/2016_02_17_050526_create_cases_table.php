@@ -20,7 +20,8 @@ class CreateCasesTable extends Migration
             $table->string('QQ');
             $table->string('weixin');
             $table->string('weibo');
-            $table->string('detail');
+            $table->string('detail_raw');
+            $table->string('detail_html');
             $table->timestamps();
         });
     }

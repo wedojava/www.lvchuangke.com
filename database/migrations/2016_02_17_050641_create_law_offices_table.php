@@ -16,7 +16,8 @@ class CreateLawOfficesTable extends Migration
             $table->increments('id');
             $table->string('officeName')->unique();
             $table->string('telephone')->unique();
-            $table->string('description');
+            $table->string('description_raw');
+            $table->string('description_html');
             $table->timestamps();
         });
     }
