@@ -20,7 +20,8 @@ class CreateLawyersTable extends Migration
             $table->string('QQ');
             $table->string('weixin');
             $table->string('weibo');
-            $table->text('description');
+            $table->text('description_raw');
+            $table->text('description_html');
             $table->timestamps();
         });
     }
