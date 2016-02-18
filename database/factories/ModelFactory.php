@@ -62,3 +62,9 @@ $factory->define(App\SuccessfulCase::class, function (Faker\Generator $faker) {
         'lawOffice' => $faker->sentence(2),
     ];
 });
+
+$factory->define(App\About::class, function (Faker\Generator $faker) {
+    return [
+        'detail_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+    ];
+});

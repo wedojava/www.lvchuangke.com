@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LawOfficeTableSeeder::class);
         $this->call(LawyerTableSeeder::class);
         $this->call(SuccessfulCaseTableSeeder::class);
+        $this->call(AboutTableSeeder::class);
         
 		Model::reguard();
     }

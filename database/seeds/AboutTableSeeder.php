@@ -12,6 +12,6 @@ class AboutTableSeeder extends Seeder
     public function run()
     {
         App\About::truncate();
-        factory(App\About::class, 20)->create();
+        factory(App\About::class, 1)->create();
     }
 }
