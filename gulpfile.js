@@ -54,7 +54,7 @@ gulp.task("copyfiles", function() {
  */
 
 elixir(function(mix) {
-	mix.phpUnit();
+	// mix.phpUnit();
     // mix.sass('app.scss');
     // 
     // 合并脚本文件
