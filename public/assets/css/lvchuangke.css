@@ -8746,5 +8746,8 @@ label,
 .fa-percent:before {
   content: "\f295";
 }
+body {
+  padding-top: 70px;
+}
 
 /*# sourceMappingURL=lvchuangke.css.map */
