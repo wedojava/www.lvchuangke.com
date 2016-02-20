@@ -49,10 +49,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">律师团</a></li>
-                    <li><a href="{{ url('/home') }}">流程</a></li>
                     <li><a href="{{ url('/home') }}">盟友</a></li>
                     <li><a href="{{ url('/home') }}">案例</a></li>
-                    <li><a href="{{ url('/home') }}">关于</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

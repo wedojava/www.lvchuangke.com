@@ -8750,6 +8750,9 @@ body {
   padding-top: 70px;
   font-size: 16px;
 }
+.lck-toppadding {
+  padding-top: 40px;
+}
 .lck-navbar {
   min-height: 70px;
 }
