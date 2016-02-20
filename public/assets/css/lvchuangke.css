@@ -8748,10 +8748,17 @@ label,
 }
 body {
   padding-top: 70px;
+  font-size: 16px;
 }
 .lck-navbar {
   min-height: 70px;
+}
+.lck-navbar a,
+.lck-navbar li a {
   line-height: 40px;
+}
+.lck-jumbotron .jumbotron h1 {
+  margin-bottom: 40px;
 }
 .navbar-default {
   border: 0;
@@ -8765,27 +8772,50 @@ body {
 .navbar-default .navbar-brand:hover {
   color: #fff;
 }
-.lck_jumbotron,
-.lck_jumbotron .jumbotron {
+.lck-jumbotron,
+.lck-jumbotron .jumbotron {
   color: #dde7f7;
   background: #134a6a;
 }
+.lck-jumbotron .jumbotron p {
+  font-size: 17px;
+}
+.lck-jumbotron form {
+  padding-top: 40px;
+}
+.btn-lck-blue.btn:hover,
+.btn-lck-blue.btn:focus,
+.btn-lck-blue.btn.focus {
+  color: #fff;
+}
 .btn-lck-blue,
-.btn-lck-blue:hover {
+.btn-lck-blue:hover,
+.btn-lck-green,
+.btn-lck-green:hover {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
   padding: 1rem 2rem 1.0625rem 2rem;
   color: #fff;
-  border-color: #1298c5;
 }
 .btn-lck-blue {
+  border-color: #1298c5;
   background-color: #22b8eb;
   transition: background-color 300ms ease-out;
 }
 .btn-lck-blue:hover {
+  border-color: #1298c5;
   background-color: #1298c5;
+}
+.btn-lck-green {
+  border-color: #4cae4c;
+  background-color: #5cb85c;
+  transition: background-color 300ms ease-out;
+}
+.btn-lck-green:hover {
+  border-color: #398439;
+  background-color: #449d44;
 }
 
 /*# sourceMappingURL=lvchuangke.css.map */

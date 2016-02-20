@@ -40,14 +40,14 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="lck-navbar navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     律创客
                 </a>
             </div>
 
-            <div class="lck-navbar collapse navbar-collapse" id="app-navbar-collapse">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="lck-navbar nav navbar-nav">
+                <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">律师团</a></li>
                     <li><a href="{{ url('/home') }}">流程</a></li>
                     <li><a href="{{ url('/home') }}">盟友</a></li>
@@ -59,11 +59,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">登录</a></li>
-                        <li><a href="{{ url('/register') }}">注册</a></li>
+                        <li><a href="{{ url('/login') }}"><i class="fa fa-btn fa-sign-in"></i>登录</a></li>
+                        {{-- <li><a href="{{ url('/register') }}">注册</a></li> --}}
                     @else
                         <li class="dropdown">
-                            <a href="#" class="lck-navbar dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
