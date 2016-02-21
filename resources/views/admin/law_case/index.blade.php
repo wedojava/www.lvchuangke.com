@@ -41,11 +41,11 @@
                                 <td class="hidden-md">{{ $law_case->detail_raw }}</td>
                                 <td>
                                     <a href="/admin/law_case/{{ $law_case->id }}/edit"
-                                     class="btn btn-xs btn-info">
+                                     class="btn btn-xs btn-primary">
                                         <i class="fa fa-edit"></i>编辑
                                     </a>
                                     <a href="/law_case/{{ $law_case->id }}"
-                                     class="btn btn-xs btn-warning">
+                                     class="btn btn-xs btn-success">
                                         <i class="fa fa-eye"></i>查看
                                     </a>
                                     <a href="/admin/law_case/{{ $law_case->id }}" class="btn btn-xs btn-danger" data-method="delete" data-token="{{csrf_token()}}" data-confirm="确定要删除么?">

@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\Job;
+use App\LawCase;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -46,6 +47,11 @@ class LawCaseFormFields extends Job implements SelfHandling
     public function handle()
     {
         $fields = $this->fieldList;
+
+        // 如果 id 不是 null，通过Post模型返回 id 是 $id 的字段内容的 array。
+        if ($this->id) {
+            $fields = $this->fieldsFromModel($this->id, $fields);
+        }
 
         // 遍历 fieldList 内容并设定对应的old的值。
         foreach ($fields as $fieldName => $fieldValue) {

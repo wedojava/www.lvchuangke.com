@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\LawCaseCreateRequest;
+use App\Http\Requests\LawCaseUpdateRequest;
 use App\Jobs\LawCaseFormFields;
 use App\LawCase;
 use Illuminate\Http\Request;
@@ -67,7 +68,7 @@ class LawCaseController extends Controller
      */
     public function edit($id)
     {
-        $data = $this->dispath(new LawCaseFormFields($id));
+        $data = $this->dispatch(new LawCaseFormFields($id));
 
         return view('admin.law_case.edit', $data);
     }
@@ -105,7 +106,7 @@ class LawCaseController extends Controller
     public function destroy($id)
     {
         $law_case = LawCase::findOrFail($id);
-        $law_case = delete();
+        $law_case->delete();
 
         return redirect()
             ->route('admin.law_case.index')
