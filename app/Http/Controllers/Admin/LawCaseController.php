@@ -16,7 +16,7 @@ class LawCaseController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.law_case.index');
     }
 
     /**
