@@ -13,7 +13,7 @@ Route::group(['middleware' => 'web'], function () {
 
 // Admin area
 Route::get('admin', function () {
-    return redirect('/admin/post');
+    return redirect('/admin/law_case');
 });
 
 // Route::group可以写成$router->group
