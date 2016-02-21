@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Requests\LawCaseCreateRequest;
+use App\Jobs\LawCaseFormFields;
+use App\LawCase;
+use Illuminate\Http\Request;
 
 class LawCaseController extends Controller
 {
@@ -16,7 +18,8 @@ class LawCaseController extends Controller
      */
     public function index()
     {
-        return view('admin.law_case.index');
+        return view('admin.law_case.index')
+            ->withLawCases(LawCase::all());
     }
 
     /**
@@ -26,7 +29,8 @@ class LawCaseController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->dispatch(new LawCaseFormFields());
+        return view('admin.law_case.create', $data);
     }
 
     /**
@@ -35,9 +39,13 @@ class LawCaseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LawCaseCreateRequest $request)
     {
-        //
+        $law_case = LawCase::create($request->postFillData());
+
+        return redirect()
+            ->route('admin.law_case.index')
+            ->withSuccess('新案情添加成功！');
     }
 
     /**
@@ -59,7 +67,9 @@ class LawCaseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispath(new LawCaseFormFields($id));
+
+        return view('admin.law_case.edit', $data);
     }
 
     /**
@@ -69,9 +79,21 @@ class LawCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LawCaseUpdateRequest $request, $id)
     {
-        //
+        $law_case = LawCase::findOrFail($id);
+        $law_case->fill($request->postFillData());
+        $law_case->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('案件更改保存成功！');
+        }
+
+        return redirect()
+            ->route('admin.law_case.index')
+            ->withSuccess('案件更改保存成功！');
     }
 
     /**
@@ -82,6 +104,11 @@ class LawCaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $law_case = LawCase::findOrFail($id);
+        $law_case = delete();
+
+        return redirect()
+            ->route('admin.law_case.index')
+            ->withSuccess('案件已删除！');
     }
 }

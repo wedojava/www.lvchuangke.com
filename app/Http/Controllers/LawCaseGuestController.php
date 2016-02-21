@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Requests\LawCaseRequest;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-class LawyerController extends Controller
+class LawCaseGuestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class LawyerController extends Controller
      */
     public function index()
     {
-        return view('admin.lawyer.index');
+        //
     }
 
     /**
@@ -35,9 +35,10 @@ class LawyerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LawCaseRequest $request)
     {
-        //
+        App\LawCase::create($request->all());
+        return redirect()->back();
     }
 
     /**

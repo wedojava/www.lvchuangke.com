@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">关于</h3>
+                        <h3 class="panel-title">关于我们</h3>
                     </div>
                     <div class="panel-body">
 

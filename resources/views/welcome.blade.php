@@ -15,20 +15,21 @@
           </p>
         </div>
         <div class="col-md-4">
-          <form class="form-horizontal">
+          <form class="form-horizontal" method="POST" action="/law_case" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <input type="nickname" class="form-control" id="nickname" placeholder=" 输入您的姓名！">
+                <input type="nickname" class="form-control" id="nickname" placeholder=" 输入您的姓名！" required>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <input type="telephone" class="form-control" id="telephone" placeholder="输入您的联系电话！">
+                <input type="telephone" class="form-control" id="telephone" placeholder="输入您的联系电话！" required>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <textarea type="text" name="detail" id="detail" class="form-control" rows="5" placeholder="请在150字以内，简述您的案情！">{{ old('detail') }}</textarea>
+                <textarea type="text" name="detail" id="detail" class="form-control" rows="5" placeholder="请在150字以内，简述您的案情！" required>{{ old('detail') }}</textarea>
               </div>
             </div>
             <div class="form-group">

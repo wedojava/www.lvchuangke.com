@@ -16,7 +16,7 @@ class LawOfficeController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.law_office.index');
     }
 
     /**
