@@ -7,8 +7,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
-    Route::resource('/law_case', 'LawCaseGuestController');
+    Route::resource('/guestcase', 'GuestCaseController');
 });
 
 // Admin area
