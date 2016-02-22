@@ -31,7 +31,7 @@
                             <button type="submit" class="btn btn-primary btn-lg"
                                     name="action" value="continue">
                               <i class="fa fa-floppy-o"></i>
-                              保存 - 并继续编辑
+                              保存 - 并继续添加
                             </button>
                             <button type="submit" class="btn btn-success btn-lg"
                                     name="action" value="finished">
