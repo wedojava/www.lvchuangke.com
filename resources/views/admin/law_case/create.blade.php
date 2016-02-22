@@ -16,6 +16,7 @@
                 </div>
                 <div class="panel-body">
 
+                    @include('admin.partials.success')
                     @include('admin.partials.errors')
 
                     <form class="form-horizontal" role="form" method="POST"
@@ -27,9 +28,15 @@
                       <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                           <div class="col-md-10 col-md-offset-2">
-                            <button type="submit" class="btn btn-primary btn-lg">
-                              <i class="fa fa-disk-o"></i>
-                              保存案例
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                    name="action" value="continue">
+                              <i class="fa fa-floppy-o"></i>
+                              保存 - 并继续编辑
+                            </button>
+                            <button type="submit" class="btn btn-success btn-lg"
+                                    name="action" value="finished">
+                              <i class="fa fa-floppy-o"></i>
+                              保存 - 并返回列表
                             </button>
                           </div>
                         </div>

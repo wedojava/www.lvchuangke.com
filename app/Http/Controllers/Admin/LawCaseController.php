@@ -44,6 +44,12 @@ class LawCaseController extends Controller
     {
         $law_case = LawCase::create($request->postFillData());
 
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('新案情添加成功！');
+        }
+
         return redirect()
             ->route('admin.law_case.index')
             ->withSuccess('新案情添加成功！');
