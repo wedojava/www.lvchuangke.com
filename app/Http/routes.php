@@ -7,7 +7,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    Route::resource('/guestcase', 'GuestCaseController');
+    Route::post('/guestcase', 'GuestCaseController@store');
 });
 
 // Admin area

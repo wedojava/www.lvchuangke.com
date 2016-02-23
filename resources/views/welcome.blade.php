@@ -19,12 +19,12 @@
             {{ csrf_field() }}
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <input type="nickname" class="form-control" id="nickname" placeholder=" 输入您的姓名！" required>
+                <input type="nickname" class="form-control" name="nickname" id="nickname" placeholder=" 输入您的姓名！" autofocus required>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <input type="telephone" class="form-control" id="telephone" placeholder="输入您的联系电话！" required>
+                <input type="telephone" class="form-control" name="telephone" id="telephone" placeholder="输入您的联系电话！" required>
               </div>
             </div>
             <div class="form-group">
