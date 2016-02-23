@@ -24,10 +24,10 @@ class LawCaseCreateRequest extends Request
     public function rules()
     {
         return [
-            'nickname' => 'required',
+            'nickname'  => 'required|max:50',
             'telephone' => 'required',
-            'email' => '',
-            'QQ' => '',
+            'email' => 'email',
+            'QQ' => 'numeric',
             'detail' => 'required',
         ];
     }

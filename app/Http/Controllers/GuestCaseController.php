@@ -13,14 +13,14 @@ class GuestCaseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\GuestCaseRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(GuestCaseRequest $request)
     {
-        App\LawCase::create($request->postFillData());
+        LawCase::create($request->postFillData());
         return redirect()
-            ->route('/')
+            ->back()
             ->withSuccess('新案情添加成功！');
     }
 }

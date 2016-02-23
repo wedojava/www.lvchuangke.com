@@ -24,7 +24,7 @@ class GuestCaseRequest extends Request
     public function rules()
     {
         return [
-            'nickname'  => 'required',
+            'nickname'  => 'required|max:50',
             'telephone' => 'required',
             'detail'    => 'required',
         ];
