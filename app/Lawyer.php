@@ -18,7 +18,7 @@ class Lawyer extends Model
 	];
 
 	/**
-	 * Alias for detail_raw
+	 * Alias for description_raw
 	 * when you use $lawyer->description it’ll execute this function.
 	 */
 	public function getDescriptionAttribute($value)
