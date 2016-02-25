@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\LawOffice;
+use Illuminate\Http\Request;
 
 class LawOfficeController extends Controller
 {
@@ -16,7 +16,8 @@ class LawOfficeController extends Controller
      */
     public function index()
     {
-        return view('admin.law_office.index');
+        return view('admin.law_office.index')
+            ->withLawOffices(LawOffice::all());
     }
 
     /**
