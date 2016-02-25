@@ -99,7 +99,7 @@ class LawyerController extends Controller
         }
 
         return redirect()
-            ->route('admin.law_case.index')
+            ->route('admin.lawyer.index')
             ->withSuccess('律师信息修改成功！');
     }
 
