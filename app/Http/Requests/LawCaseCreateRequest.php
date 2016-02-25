@@ -24,7 +24,7 @@ class LawCaseCreateRequest extends Request
     public function rules()
     {
         return [
-            'nickname'  => 'required|max:50',
+            'nickname'  => 'required|mix:4|max:50',
             'telephone' => 'required',
             'email' => 'email',
             'QQ' => 'numeric',
