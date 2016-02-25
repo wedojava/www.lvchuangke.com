@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Http\Requests\LawOfficeCreateRequest;
+use App\Jobs\LawOfficeFormFields;
 use App\LawOffice;
 use Illuminate\Http\Request;
 
@@ -27,7 +29,9 @@ class LawOfficeController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->dispatch(new LawOfficeFormFields());
+
+        return view('admin.law_office.create', $data);
     }
 
     /**
@@ -36,9 +40,19 @@ class LawOfficeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LawOfficeCreateRequest $request)
     {
-        //
+        $law_office = LawOffice::create($request->postFillData());
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('律所添加成功！');
+        }
+
+        return redirect()
+            ->route('admin.law_office.index')
+            ->withSuccess('律所添加成功！');
     }
 
     /**
