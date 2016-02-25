@@ -5,8 +5,6 @@ namespace App\Jobs;
 use App\Jobs\Job;
 use App\Lawyer;
 use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 // 这个 job 将在我们获取表单内容并将之填充到 form 的时候起作用
 class LawyerFormFields extends Job implements SelfHandling

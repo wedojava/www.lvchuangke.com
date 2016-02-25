@@ -5,13 +5,9 @@ namespace App\Jobs;
 use App\Jobs\Job;
 use App\LawCase;
 use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 class LawCaseFormFields extends Job implements SelfHandling
 {
-    // use InteractsWithQueue, SerializesModels;
     /**
      * The id(if any) of the Post row.
      * @var integer
