@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Http\Requests\LawyerCreateRequest;
+use App\Http\Requests\LawyerUpdateRequest;
+use App\Jobs\LawyerFormFields;
 use App\Lawyer;
 use Illuminate\Http\Request;
 
@@ -27,7 +30,8 @@ class LawyerController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->dispatch(new LawyerFormFields());
+        return view('admin.lawyer.create', $data);
     }
 
     /**
@@ -36,9 +40,19 @@ class LawyerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LawyerCreateRequest $request)
     {
-        //
+        $lawyer = Lawyer::create($request->postFillData());
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('添加律师成功！');
+        }
+
+        return redirect()
+            ->route('admin.lawyer.index')
+            ->withSuccess('添加律师成功！');
     }
 
     /**
@@ -60,7 +74,9 @@ class LawyerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispatch(new LawyerFormFields($id));
+
+        return view('admin.lawyer.edit', $data);
     }
 
     /**
@@ -70,9 +86,21 @@ class LawyerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LawyerUpdateRequest $request, $id)
     {
-        //
+        $lawyer = Lawyer::findOrFail($id);
+        $lawyer->fill($request->postFillData());
+        $lawyer->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('律师信息修改成功！');
+        }
+
+        return redirect()
+            ->route('admin.law_case.index')
+            ->withSuccess('律师信息修改成功！');
     }
 
     /**
@@ -83,6 +111,11 @@ class LawyerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lawyer = Lawyer::findOrFail($id);
+        $lawyer->delete();
+
+        return redirect()
+            ->route('admin.lawyer.index')
+            ->withSuccess('一条律师信息已删除！');
     }
 }

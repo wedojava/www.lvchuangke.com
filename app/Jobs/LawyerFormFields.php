@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\Job;
+use App\Lawyer;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
@@ -54,7 +55,7 @@ class LawyerFormFields extends Job implements SelfHandling
         }
 
         // id 是 null，遍历 fieldList 内容,设定$fields的键值对为old键值。
-        foreach ($fieldList as $fieldName => $fieldValue) {
+        foreach ($fields as $fieldName => $fieldValue) {
             $fields[$fieldName] = old($fieldName, $fieldValue);
         }
 
