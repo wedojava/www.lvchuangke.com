@@ -76,7 +76,7 @@ class LawyerFormFields extends Job implements SelfHandling
 
         $fieldNames = array_keys($fields);
 
-        $field = ['id' => $id];
+        $fields = ['id' => $id];
 
         foreach ($fieldNames as $field) {
             $fields[$field] = $lawyer->{$field};
