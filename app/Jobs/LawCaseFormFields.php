@@ -48,7 +48,7 @@ class LawCaseFormFields extends Job implements SelfHandling
     {
         $fields = $this->fieldList;
 
-        // 如果 id 不是 null，通过Post模型返回 id 是 $id 的字段内容的 array。
+        // 如果 id 不是 null，通过模型返回 id 是 $id 的字段内容的 array。
         if ($this->id) {
             $fields = $this->fieldsFromModel($this->id, $fields);
         }
