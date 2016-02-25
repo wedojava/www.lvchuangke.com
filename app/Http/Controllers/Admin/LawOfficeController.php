@@ -112,6 +112,11 @@ class LawOfficeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $law_office = LawOffice::findOrFail($id);
+        $law_office->delete();
+
+        return redirect()
+            ->route('admin.law_office.index')
+            ->withSuccess('一条律所信息已删除！');
     }
 }
