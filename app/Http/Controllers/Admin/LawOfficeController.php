@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\LawOfficeCreateRequest;
+use App\Http\Requests\LawOfficeUpdateRequest;
 use App\Jobs\LawOfficeFormFields;
 use App\LawOffice;
 use Illuminate\Http\Request;
@@ -74,7 +75,9 @@ class LawOfficeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispatch(new LawOfficeFormFields($id));
+
+        return view('admin.law_office.edit', $data);
     }
 
     /**
@@ -84,9 +87,21 @@ class LawOfficeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LawOfficeUpdateRequest $request, $id)
     {
-        //
+        $law_office = LawOffice::findOrFail($id);
+        $law_office->fill($request->postFillData());
+        $law_office->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('律所信息修改成功！');
+        }
+
+        return redirect()
+            ->route('admin.law_office.index')
+            ->withSuccess('律所信息修改成功！');
     }
 
     /**

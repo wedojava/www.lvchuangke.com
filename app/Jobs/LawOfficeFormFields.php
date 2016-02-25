@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\Job;
+use App\LawOffice;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class LawOfficeFormFields extends Job implements SelfHandling
