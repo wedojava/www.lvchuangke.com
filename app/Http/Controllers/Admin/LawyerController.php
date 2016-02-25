@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Lawyer;
+use Illuminate\Http\Request;
 
 class LawyerController extends Controller
 {
@@ -16,7 +16,8 @@ class LawyerController extends Controller
      */
     public function index()
     {
-        return view('admin.lawyer.index');
+        return view('admin.lawyer.index')
+            ->withLawyers(Lawyer::all());
     }
 
     /**
