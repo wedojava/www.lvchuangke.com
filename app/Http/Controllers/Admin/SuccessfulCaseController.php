@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\SuccessfulCase;
+use Illuminate\Http\Request;
 
 class SuccessfulCaseController extends Controller
 {
@@ -16,7 +16,8 @@ class SuccessfulCaseController extends Controller
      */
     public function index()
     {
-        return view('admin.successful_case.index');
+        return view('admin.successful_case.index')
+            ->withSuccessfulCases(SuccessfulCase::all());
     }
 
     /**
