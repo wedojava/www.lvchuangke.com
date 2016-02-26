@@ -24,7 +24,7 @@
                         <tr>
                             <th class="hidden-sm">案例名称</th>
                             <th class="hidden-md">案例简介</th>
-                            <th class="hidden-sm">负责律师</th>
+                            <th class="hidden-sm">辩护律师</th>
                             <th class="hidden-sm">承办律所</th>
                             <th data-sortable="false">管理</th>
                         </tr>
@@ -34,8 +34,8 @@
                         @foreach ($successful_cases as $successful_case)
                             <tr>
                                 <td class="hidden-sm">{{ $successful_case->caseTitle }}</td>
-                                <td class="hidden-md">{{ $successful_case->description_raw }}</td>
-                                <td class="hidden-md">{{ $successful_case->successful_case }}</td>
+                                <td class="hidden-md">{{ $successful_case->caseDetail_raw }}</td>
+                                <td class="hidden-md">{{ $successful_case->lawyer }}</td>
                                 <td class="hidden-md">{{ $successful_case->lawOffice }}</td>
                                 <td>
                                     <a href="/admin/successful_case/{{ $successful_case->id }}/edit"
