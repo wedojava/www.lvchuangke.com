@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\Job;
+use App\SuccessfulCase;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class SuccessfulCaseFormFields extends Job implements SelfHandling

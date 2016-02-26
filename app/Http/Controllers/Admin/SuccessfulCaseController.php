@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\SuccessfulCaseCreateRequest;
+use App\Http\Requests\SuccessfulCaseUpdateRequest;
 use App\Jobs\SuccessfulCaseFormFields;
 use App\SuccessfulCase;
 use Illuminate\Http\Request;
@@ -73,7 +74,8 @@ class SuccessfulCaseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispatch(new SuccessfulCaseFormFields($id));
+        return view('admin.successful_case.edit', $data);
     }
 
     /**
@@ -83,9 +85,21 @@ class SuccessfulCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SuccessfulCaseUpdateRequest $request, $id)
     {
-        //
+        $successful_case = SuccessfulCase::findOrFail($id);
+        $successful_case->fill($request->postFillData());
+        $successful_case->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('案例修改成功！');
+        }
+
+        return redirect()
+            ->route('admin.successful_case.index')
+            ->withSuccess('案例修改成功！');
     }
 
     /**
