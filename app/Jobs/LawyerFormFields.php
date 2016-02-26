@@ -46,7 +46,7 @@ class LawyerFormFields extends Job implements SelfHandling
     {
         $fields = $this->fieldList;
 
-        // 如果 id 不是 null，通过模型返回 id 是 $id 的 array，并跳出 job.
+        // 如果 id 不是 null，通过模型取值返回 id 是 $id 的 array，并跳出 job.
         // 如果 id 是 null,说明可能处于创建数据，此时如果提交失败，填充数据应当为request里的内容，即适用old()调用
         if ($this->id) {
             $fields = $this->fieldsFromModel($this->id, $fields);

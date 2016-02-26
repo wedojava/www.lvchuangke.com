@@ -27,7 +27,8 @@ class SuccessfulCaseController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->dispatch(new SuccessfulCaseFormFields());
+        return view('admin.successful_case.create', $data);
     }
 
     /**
