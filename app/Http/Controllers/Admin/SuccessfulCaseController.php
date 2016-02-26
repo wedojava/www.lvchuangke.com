@@ -110,6 +110,11 @@ class SuccessfulCaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $successful_case = SuccessfulCase::findOrFail($id);
+        $successful_case->delete();
+
+        return redirect()
+            ->route('admin.successful_case.index')
+            ->withSuccess('一条案例已被删除！');
     }
 }
