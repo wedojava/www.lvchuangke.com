@@ -7,6 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class About extends Model
 {
+	protected $fillable = [
+	    'detail_raw',
+        'reverse_directions' => 0,
+	];
+
+	/**
+	 * Alias for description_raw
+	 * when you use $lawyer->description it’ll execute this function.
+	 */
+	public function getDetailAttribute($value)
+	{
+		return $this->detail_raw;
+	}
+
     /**
 	 * Set the HTML content automatically when the raw content is set
 	 *

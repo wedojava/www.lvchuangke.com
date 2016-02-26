@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\About;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Requests\AboutUpdateRequest;
+use App\Jobs\AboutFormFields;
+use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -16,7 +18,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('admin.about.index');
+        return view('admin.about.index')
+            ->withAbouts(About::all());
     }
 
     /**
@@ -59,7 +62,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->dispatch(new AboutFormFields($id));
+
+        return view('admin.about.edit', $data);
     }
 
     /**
@@ -69,9 +74,21 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AboutUpdateRequest $request, $id)
     {
-        //
+        $about = About::findOrFail($id);
+        $about->fill($request->postFillData());
+        $about->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('关于信息修改成功！');
+        }
+
+        return redirect()
+            ->route('admin.about.index')
+            ->withSuccess('关于信息修改成功！');
     }
 
     /**
