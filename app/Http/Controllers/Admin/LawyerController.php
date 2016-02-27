@@ -122,9 +122,9 @@ class LawyerController extends Controller
 
     public function addAvatar(Request $request)
     {
-        $file = $request->file('file');
-        $name = time() . $file->getClientOriginalName();
-        $file->move('uploads/photos', $name);
+        // $file = $request->file('file');
+        // $name = time() . $file->getClientOriginalName();
+        // $file->move('uploads/photos', $name);
         return 'Done';
     }
 }
