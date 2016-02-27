@@ -17,6 +17,11 @@ class Lawyer extends Model
         'reverse_directions' => 0,
 	];
 
+	public function lawyer_avatar()
+	{
+		return $this->hasOne('App\LawyerAvatar');
+	}
+
 	/**
 	 * Alias for description_raw
 	 * when you use $lawyer->description it’ll execute this function.
