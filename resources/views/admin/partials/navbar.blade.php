@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav">
-    <li><a href="/">网站首页</a></li>
+    <li><a href="/" target="_blank">网站首页</a></li>
     @if (Auth::check())
         <li @if (Request::is('admin/law_case*')) class="active" @endif>
             <a href="/admin/law_case">案情</a>
