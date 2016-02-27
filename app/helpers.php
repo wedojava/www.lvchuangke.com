@@ -1,4 +1,8 @@
 <?php
+function flash($message)
+{
+}
+
 /**
  * Return "checked" if true.
  * @param  string $value 

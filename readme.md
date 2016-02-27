@@ -51,6 +51,8 @@ bower install fontawesome --save
 bower install datatables --save
 
 bower install datatables-plugins --save
+
+bower install sweetalert --save
 ```
 
 然后：

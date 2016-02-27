@@ -18,6 +18,9 @@ gulp.task("copyfiles", function() {
     gulp.src("vendor/bower_dl/bootstrap/dist/js/bootstrap.js")
         .pipe(gulp.dest("resources/assets/js/"));
 
+    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.min.js")
+        .pipe(gulp.dest("resources/assets/js/"));
+
     gulp.src("vendor/bower_dl/bootstrap/dist/fonts/**")
         .pipe(gulp.dest("public/assets/fonts"));
 
@@ -61,6 +64,7 @@ elixir(function(mix) {
     mix.scripts([
             'js/jquery.js',
             'js/bootstrap.js',
+            'js/sweetalert.min.js',
             'js/jquery.dataTables.js',
             'js/dataTables.bootstrap.js'
         ],
