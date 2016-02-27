@@ -88,6 +88,7 @@
   Dropzone.options.addAvatarForm = {
     paramName: 'avatar',
     maxFilesize: 3,
+    uploadMultiple: false,
     acceptedFiles: '.jpg, .jpeg, .png, .gif, .bmp'
   }
 </script>

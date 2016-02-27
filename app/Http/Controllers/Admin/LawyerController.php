@@ -9,6 +9,7 @@ use App\Http\Requests\LawyerUpdateRequest;
 use App\Jobs\LawyerFormFields;
 use App\Lawyer;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\File\getClientOriginalExtension;
 use Symfony\Component\HttpFoundation\File\getClientOriginalName;
 
 class LawyerController extends Controller
@@ -122,9 +123,9 @@ class LawyerController extends Controller
 
     public function addAvatar(Request $request)
     {
-        // $file = $request->file('file');
-        // $name = time() . $file->getClientOriginalName();
-        // $file->move('uploads/photos', $name);
+        $file = $request->file('avatar');
+        $name = 'avatar_id_' . $request->id .'.'. $file->getClientOriginalExtension();
+        $file->move('uploads/avatars', $name);
         return 'Done';
     }
 }
