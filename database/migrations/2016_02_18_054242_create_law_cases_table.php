@@ -14,7 +14,7 @@ class CreateLawCasesTable extends Migration
     {
         Schema::create('law_cases', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nickname')->unique();
+            $table->string('nickname');
             $table->string('telephone');
             $table->string('email');
             $table->string('QQ');
