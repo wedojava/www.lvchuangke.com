@@ -15,7 +15,7 @@ class CreateLawyerAvatarsTable extends Migration
         Schema::create('lawyer_avatars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('lawyer_id')->unsigned();
-            $table->foreign('lawyer_id')->references('id')->on('lawyers')->onDelete('cascade');
+            // $table->foreign('lawyer_id')->references('id')->on('lawyers')->onDelete('cascade');
             $table->string('name');
             $table->string('path');
             $table->string('thumbnail_path');
