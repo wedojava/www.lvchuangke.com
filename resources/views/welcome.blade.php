@@ -6,7 +6,7 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-8">
-            {!! App\About::first()->detail_html !!}
+            {!! $about->detail_html !!}
         </div>
         <div class="col-md-4">
           <form class="form-horizontal" method="POST" action="/guestcase" enctype="multipart/form-data">
@@ -31,6 +31,22 @@
                 <button type="submit" class="btn btn-lg btn-lck-green"><i class="fa fa-btn fa-send"></i>提交</button>
               </div>
             </div>
+
+            @if(count($errors) > 0)
+              @foreach($errors->all() as $error)
+                {{flash()->error('输入错误!', $error)}}
+              @endforeach
+            @endif
+
+            {{-- @if(count($errors) > 0) --}}
+              {{-- <div class="alert alert-danger col-sm-11 col-md-offset-1"> --}}
+                {{-- <ul> --}}
+                  {{-- @foreach($errors->all() as $error) --}}
+                    {{-- <li>{{ $error }}</li> --}}
+                  {{-- @endforeach --}}
+                {{-- </ul> --}}
+              {{-- </div> --}}
+            {{-- @endif --}}
           </form>
         </div>
       </div>
