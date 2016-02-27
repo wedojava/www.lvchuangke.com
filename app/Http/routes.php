@@ -20,4 +20,5 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'auth']], function
     Route::resource('admin/law_office', 'LawOfficeController');
     Route::resource('admin/successful_case', 'SuccessfulCaseController');
     Route::resource('admin/about', 'AboutController');
+    Route::post('{id}/avatar', 'LawyerController@addAvatar');
 });

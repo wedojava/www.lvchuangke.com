@@ -9,6 +9,7 @@ use App\Http\Requests\LawyerUpdateRequest;
 use App\Jobs\LawyerFormFields;
 use App\Lawyer;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\File\getClientOriginalName;
 
 class LawyerController extends Controller
 {
@@ -117,5 +118,13 @@ class LawyerController extends Controller
         return redirect()
             ->route('admin.lawyer.index')
             ->withSuccess('一条律师信息已删除！');
+    }
+
+    public function addAvatar(Request $request)
+    {
+        $file = $request->file('file');
+        $name = time() . $file->getClientOriginalName();
+        $file->move('uploads/photos', $name);
+        return 'Done';
     }
 }

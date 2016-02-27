@@ -1,5 +1,9 @@
 @extends('admin.layout')
 
+@section('styles')
+<link rel="stylesheet" type="text/css" href="/assets/css/dropzone.min.css">
+@endsection
+
 @section('content')
   <div class="container">
     <div class="row page-title-row">
@@ -18,38 +22,28 @@
 
             @include('admin.partials.errors')
             @include('admin.partials.success')
+            <div class="row">
+              <div class="col-md-4">
+                <form id="addAvatarForm"
+                  action="/4/avatar"
+                  method="POST"
+                  class="dropzone">
+                  {{ csrf_field() }}
+                </form>
+              </div>
+              <div class="col-md-8">
+                <form class="form-horizontal" role="form" method="POST"
+                      action="{{ route('admin.lawyer.update', $id) }}">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="_method" value="PUT">
 
-            <form class="form-horizontal" role="form" method="POST"
-                  action="{{ route('admin.lawyer.update', $id) }}">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <input type="hidden" name="_method" value="PUT">
+                  @include('admin.lawyer._form')
 
-              @include('admin.lawyer._form')
-
-              <div class="col-md-8 col-md-offset-2">
-                <div class="form-group">
-                  <div class="col-md-10 col-md-offset-2">
-                    <button type="submit" class="btn btn-primary btn-lg"
-                            name="action" value="continue">
-                      <i class="fa fa-floppy-o"></i>
-                      保存 - 并继续编辑
-                    </button>
-                    <button type="submit" class="btn btn-success btn-lg"
-                            name="action" value="finished">
-                      <i class="fa fa-floppy-o"></i>
-                      保存 - 并返回列表
-                    </button>
-                    <button type="button" class="btn btn-danger btn-lg"
-                            data-toggle="modal" data-target="#modal-delete">
-                      <i class="fa fa-times-circle"></i>
-                      删除
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
 
-            </form>
-
+              
+            </div>
           </div>
         </div>
       </div>
@@ -87,3 +81,14 @@
     </div>
   </div>
 @stop
+
+@section('scripts')
+<script type="text/javascript" src="/assets/js/dropzone.min.js"></script>
+<script>
+  Dropzone.options.addAvatarForm = {
+    paramName: 'avatar',
+    maxFilesize: 3,
+    acceptedFiles: '.jpg, .jpeg, .png, .gif, .bmp'
+  }
+</script>
+@endsection

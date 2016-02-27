@@ -18,11 +18,6 @@ gulp.task("copyfiles", function() {
     gulp.src("vendor/bower_dl/bootstrap/dist/js/bootstrap.js")
         .pipe(gulp.dest("resources/assets/js/"));
 
-    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.min.js")
-        .pipe(gulp.dest("public/assets/js/"));
-    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.css")
-        .pipe(gulp.dest("public/assets/css/"));
-
     gulp.src("vendor/bower_dl/bootstrap/dist/fonts/**")
         .pipe(gulp.dest("public/assets/fonts"));
 
@@ -31,6 +26,18 @@ gulp.task("copyfiles", function() {
 
     gulp.src("vendor/bower_dl/font-awesome/fonts/**")
         .pipe(gulp.dest("public/assets/fonts"));
+
+    // 拷贝 sweetalert 脚本和样式库
+    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.min.js")
+        .pipe(gulp.dest("public/assets/js/"));
+    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.css")
+        .pipe(gulp.dest("public/assets/css/"));
+
+    // 拷贝 dropzone 脚本和样式库
+    gulp.src("vendor/bower_dl/dropzone/dist/min/dropzone.min.js")
+        .pipe(gulp.dest("public/assets/js/"));
+    gulp.src("vendor/bower_dl/dropzone/dist/min/dropzone.min.css")
+        .pipe(gulp.dest("public/assets/css/"));
 
     // 拷贝 datatables
     var dtDir = 'vendor/bower_dl/datatables-plugins/integration/';
