@@ -20,6 +20,8 @@ gulp.task("copyfiles", function() {
 
     gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.min.js")
         .pipe(gulp.dest("resources/assets/js/"));
+    gulp.src("vendor/bower_dl/sweetalert/dist/sweetalert.css")
+        .pipe(gulp.dest("public/assets/css/"));
 
     gulp.src("vendor/bower_dl/bootstrap/dist/fonts/**")
         .pipe(gulp.dest("public/assets/fonts"));
