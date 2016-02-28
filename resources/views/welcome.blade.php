@@ -55,19 +55,10 @@
 </div> {{-- end of lck-jumbotron --}}
 
 <div class="container">
-  这里是操作流程
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  @include('welcome.flowchart')
 </div>
+@include('welcome.lawyers')
+@include('welcome.lawoffices')
+@include('welcome.successfulcases')
+@include('welcome.footer')
 @endsection

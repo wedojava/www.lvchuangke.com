@@ -8857,5 +8857,23 @@ body {
   border-color: #398439;
   background-color: #449d44;
 }
+/**
+ * flowchart
+ */
+.flowchart {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+/**
+ * lawyers
+ */
+.lawyers {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #dde7f7;
+}
+.lawyers h1 {
+  text-align: center;
+}
 
 /*# sourceMappingURL=lvchuangke.css.map */
