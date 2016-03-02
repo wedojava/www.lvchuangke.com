@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-11 col-md-offset-1">
-                <button type="submit" class="btn btn-lg btn-lck-green"><i class="fa fa-btn fa-send"></i>提交</button>
+                <button type="submit" class="btn btn--bright btn--3d"><i class="fa fa-btn fa-send"></i>提交</button>
               </div>
             </div>
 
