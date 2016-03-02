@@ -21,7 +21,7 @@ class AboutTableSeeder extends Seeder
 我们为您保驾护航！我们承诺，最终，你只需要话费请一名律师的钱！
 
 <p>
-    <a class="btn btn-lg btn-lck-blue" href="javascript:;" role="button">联系我们 <i class="fa fa-btn fa-arrow-right"></i>15899138838</a>
+    <a class="btn btn--3d btn--bright-blue" href="javascript:;" role="button">联系我们 <i class="fa fa-btn fa-arrow-right"></i>15899138838</a>
 </p>
 EOT;
         $data = [
