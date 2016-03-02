@@ -25,6 +25,8 @@ class LawyerCreateRequest extends Request
     {
         return [
             'username'  => 'required|max:50',
+            'professional_field'  => 'required|max:50',
+            'occupation_no'  => 'required|max:50',
             'telephone' => 'required',
             'email' => 'email',
             'QQ' => 'numeric',
@@ -41,6 +43,8 @@ class LawyerCreateRequest extends Request
     {
         return [
             'username' => $this->username,
+            'professional_field' => $this->professional_field,
+            'occupation_no' => $this->occupation_no,
             'telephone' => $this->telephone,
             'email' => $this->email,
             'QQ' => $this->QQ,

@@ -8,6 +8,24 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="professional_field" class="col-md-2 control-label">
+         专业领域
+      </label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="professional_field"
+               id="professional_field" value="{{ $professional_field }}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="occupation_no" class="col-md-2 control-label">
+         职业证号
+      </label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="occupation_no"
+               id="occupation_no" value="{{ $occupation_no }}">
+      </div>
+    </div>
+    <div class="form-group">
       <label for="telephone" class="col-md-2 control-label">
          联系电话
       </label>

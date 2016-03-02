@@ -21,6 +21,8 @@ class LawyerFormFields extends Job implements SelfHandling
      */
     protected $fieldList = [
         'username' => '',
+        'professional_field' => '',
+        'occupation_no' => '',
         'telephone' => '',
         'email' => '',
         'QQ' => '',

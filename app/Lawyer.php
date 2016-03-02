@@ -10,6 +10,8 @@ class Lawyer extends Model
 
 	protected $fillable = [
 	    'username',
+	    'professional_field',
+	    'occupation_no',
 	    'telephone',
 	    'email',
 	    'QQ',

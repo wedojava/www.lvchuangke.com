@@ -23,7 +23,9 @@
                     <thead>
                         <tr>
                             <th class="hidden-sm">姓名</th>
-                            <th class="hidden-sm">联系电话</th>
+                            <th class="hidden-md">专业领域</th>
+                            <th class="hidden-md">职业证号</th>
+                            <th class="hidden-md">联系电话</th>
                             <th class="hidden-sm">电子邮件</th>
                             <th class="hidden-sm">QQ</th>
                             <th class="hidden-md">简介</th>
@@ -35,9 +37,11 @@
                         @foreach ($lawyers as $lawyer)
                             <tr>
                                 <td class="hidden-sm">{{ $lawyer->username }}</td>
+                                <td class="hidden-md">{{ $lawyer->professional_field }}</td>
+                                <td class="hidden-md">{{ $lawyer->occupation_no }}</td>
                                 <td class="hidden-md">{{ $lawyer->telephone }}</td>
-                                <td class="hidden-md">{{ $lawyer->email }}</td>
-                                <td class="hidden-md">{{ $lawyer->QQ }}</td>
+                                <td class="hidden-sm">{{ $lawyer->email }}</td>
+                                <td class="hidden-sm">{{ $lawyer->QQ }}</td>
                                 <td class="hidden-md">{{ $lawyer->description_raw }}</td>
                                 <td>
                                     <a href="/admin/lawyer/{{ $lawyer->id }}/edit"
