@@ -5,15 +5,9 @@
 	    </h1>
 		<div class="row">
 			<ul class="lck-list">
-				<li class="lck-list__element"><a href="">Automotive & Vehicle</a></li>
-				<li class="lck-list__element"><a href="">Enviromental & Green</a></li>
-				<li class="lck-list__element"><a href="">Real Estate & Mortgage</a></li>
-				<li class="lck-list__element"><a href="">Staff Favourites</a></li>
-				<li class="lck-list__element"><a href="">Home Furnishings</a></li>
-				<li class="lck-list__element"><a href="">Community & Non-Profit</a></li>
-				<li class="lck-list__element"><a href="">Entertainment & The Arts</a></li>
-				<li class="lck-list__element"><a href="">Wedding Services</a></li>
-				<li class="lck-list__element"><a href="">Medical & Pharmaceutical</a></li>
+				@foreach($law_offices->all() as $law_office)
+				<li class="lck-list__element"><a href="">{{$law_office->officeName}}</a></li>
+				@endforeach
 			</ul>
 			<div class="front-section__signup awesome__button">
 	            <a href="/lawoffices" class="btn--monster">更多律所</a>
