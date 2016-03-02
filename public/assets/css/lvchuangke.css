@@ -8765,6 +8765,10 @@ body {
   margin-bottom: 40px;
   text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
 }
+.lck-jumbotron .form-control {
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
 .lck-highlight {
   display: inline;
   padding: .01em .2em .01em;
