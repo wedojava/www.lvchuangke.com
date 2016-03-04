@@ -9,6 +9,9 @@ use App\Http\Requests\LawyerUpdateRequest;
 use App\Jobs\LawyerFormFields;
 use App\Lawyer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\File\getClientOriginalExtension;
 use Symfony\Component\HttpFoundation\File\getClientOriginalName;
 
@@ -121,11 +124,50 @@ class LawyerController extends Controller
             ->withSuccess('一条律师信息已删除！');
     }
 
-    public function addAvatar(Request $request)
+    public function avatar($id)
     {
-        $file = $request->file('avatar');
-        $name = 'avatar_id_' . $request->id .'.'. $file->getClientOriginalExtension();
-        $file->move('uploads/avatars', $name);
-        return 'Done';
+        return view('admin.lawyer.avatar');
+    }
+
+    public function avatarUpload(Request $request)
+    {
+        $this->wrongTokenAjax($request);
+        $file = $request->file('image');
+        $input = array('image' => $file);
+        $rules = array('image' => 'image');
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            return Response::json([
+                'success' => false,
+                'error' => $validator->getMessageBag()->toArray()
+            ]);
+        }
+
+        $destinationPath = 'uploads/avatars';
+        $filename = 'lawyer_id.' . $request->id . '.avatar.' . $file->getClientOriginalExtension();
+        // $filename = $file->getClientOriginalName();
+        $file->move($destinationPath, $filename);
+
+        return Response::json([
+            'success' => true,
+            'aratar' => asset($destinationPath . $filename),
+        ]);
+
+        // 
+        // $file = $request->file('image');
+        // $name = 'lawyer_' . $request->id . '_avatar. ' . $file->getClientOriginalExtension();
+        // $file->move('uploads/avatars', $name);
+        // return 'Done';
+    }
+
+    public function wrongTokenAjax(Request $request)
+    {
+        if (Session::token() !== $request->get('_token')) {
+            $response = [
+                'status' => false,
+                'error' => 'Wrong Token!',
+            ];
+            return Response::json($request);
+        }
     }
 }

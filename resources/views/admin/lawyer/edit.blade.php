@@ -24,12 +24,13 @@
             @include('admin.partials.success')
             <div class="row">
               <div class="col-md-4">
-                <form id="addAvatarForm"
-                  action="/4/avatar"
+                <!-- <form id="addAvatarForm"
+                  action="avatar"
                   method="POST"
                   class="dropzone">
                   {{ csrf_field() }}
-                </form>
+                </form> -->
+                <a href="avatar">编辑头像</a>
               </div>
               <div class="col-md-8">
                 <form class="form-horizontal" role="form" method="POST"
@@ -83,7 +84,7 @@
 @stop
 
 @section('scripts')
-<script type="text/javascript" src="/assets/js/dropzone.min.js"></script>
+<!-- <script type="text/javascript" src="/assets/js/dropzone.min.js"></script>
 <script>
   Dropzone.options.addAvatarForm = {
     paramName: 'avatar',
@@ -91,5 +92,5 @@
     uploadMultiple: false,
     acceptedFiles: '.jpg, .jpeg, .png, .gif, .bmp'
   }
-</script>
+</script> -->
 @endsection

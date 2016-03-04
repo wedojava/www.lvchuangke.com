@@ -39,6 +39,10 @@ gulp.task("copyfiles", function() {
     gulp.src("vendor/bower_dl/dropzone/dist/min/dropzone.min.css")
         .pipe(gulp.dest("public/assets/css/"));
 
+    // 拷贝 jquery.form.js
+    gulp.src("vendor/bower_dl/jquery-form/jquery.form.js")
+        .pipe(gulp.dest("public/assets/js/"));
+
     // 拷贝 datatables
     var dtDir = 'vendor/bower_dl/datatables-plugins/integration/';
 
