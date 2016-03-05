@@ -39,6 +39,12 @@ gulp.task("copyfiles", function() {
     gulp.src("vendor/bower_dl/dropzone/dist/min/dropzone.min.css")
         .pipe(gulp.dest("public/assets/css/"));
 
+    // 拷贝 cropper 脚本和样式库
+    gulp.src("vendor/bower_dl/cropper/dist/min/cropper.min.js")
+        .pipe(gulp.dest("public/assets/js/"));
+    gulp.src("vendor/bower_dl/cropper/dist/min/cropper.min.css")
+        .pipe(gulp.dest("public/assets/css/"));
+
     // 拷贝 jquery.form.js
     gulp.src("vendor/bower_dl/jquery-form/jquery.form.js")
         .pipe(gulp.dest("public/assets/js/"));
