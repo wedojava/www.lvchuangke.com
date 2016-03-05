@@ -1,7 +1,9 @@
 @extends('admin.layout')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" href="/assets/css/dropzone.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/dropzone.min.css"> -->
+<link rel="stylesheet" type="text/css" href="/assets/css/cropper.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/upload_cropper.css">
 @endsection
 
 @section('content')
@@ -30,7 +32,9 @@
                   class="dropzone">
                   {{ csrf_field() }}
                 </form> -->
-                <a href="avatar">编辑头像</a>
+                <!-- <a href="avatar">编辑头像</a> -->
+                @include('admin.lawyer.avatar')
+
               </div>
               <div class="col-md-8">
                 <form class="form-horizontal" role="form" method="POST"
@@ -92,5 +96,5 @@
     uploadMultiple: false,
     acceptedFiles: '.jpg, .jpeg, .png, .gif, .bmp'
   }
-</script> -->
+</script>
 @endsection

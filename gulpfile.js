@@ -40,9 +40,9 @@ gulp.task("copyfiles", function() {
         .pipe(gulp.dest("public/assets/css/"));
 
     // 拷贝 cropper 脚本和样式库
-    gulp.src("vendor/bower_dl/cropper/dist/min/cropper.min.js")
+    gulp.src("vendor/bower_dl/cropper/dist/cropper.min.js")
         .pipe(gulp.dest("public/assets/js/"));
-    gulp.src("vendor/bower_dl/cropper/dist/min/cropper.min.css")
+    gulp.src("vendor/bower_dl/cropper/dist/cropper.min.css")
         .pipe(gulp.dest("public/assets/css/"));
 
     // 拷贝 jquery.form.js

@@ -1,73 +1,76 @@
-@extends('admin.layout')
-@section('content')
-<img id="user-avatar" src="https://wt-prj.oss.aliyuncs.com/0d06af79c49d4e08abb1ab3f7ab6e860/772c684b-10a4-43cf-8eec-dda9e28a5a23.png">
+<!-- Current avatar -->
+<div id="crop-avatar">
 
-
-<div id="validation-errors"></div>
-
-
-<div class="avatar-upload" id="avatar-upload">
-<form action="avatar" method="POST" id="upload" enctype="multipart/form-data">
-	{{ csrf_field() }}
-	<a href="#" class="btn button-change-profile-picture">
-<label for="upload-profile-picture">
-<span id="upload-avatar">更换新头像</span>
-	<input name="image" id="image" type="file" class="manual-file-chooser js-manual-file-chooser js-avatar-field">
-</label>
-</a>
-
-</form>
-
-
-<div class="span5">
-<div id="output" style="display:none">
+<!-- Current avatar -->
+<div class="avatar-view" title="点击设置头像">
+    <img src="/assets/image/avatar.svg" alt="Avatar"/>
 </div>
+<div style="text-align:center;color:red;margin:50px 0">提示：点击头像上传</div>
+<!-- Cropping modal -->
+<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="avatar-body">
+
+                        <!-- Upload image and data -->
+                        <div class="avatar-upload">
+                            <input class="avatar-src" name="avatar_src" type="hidden"/>
+                            <input class="avatar-data" name="avatar_data" type="hidden"/>
+                            <label for="avatarInput">头像上传</label>
+                            <input class="avatar-input" id="avatarInput" name="avatar_file" type="file"/>
+                        </div>
+
+                        <!-- Crop and preview -->
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="avatar-wrapper"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="avatar-preview preview-lg"></div>
+                                <div class="avatar-preview preview-md"></div>
+                                <div class="avatar-preview preview-sm"></div>
+                            </div>
+                        </div>
+
+                        <div class="row avatar-btns">
+                            <div class="col-md-9">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">Rotate Left</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="-15" type="button">-15deg</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="-30" type="button">-30deg</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">-45deg</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">Rotate Right</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="15" type="button">15deg</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="30" type="button">30deg</button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">45deg</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-block avatar-save" type="submit">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div><!-- /.modal -->
+
+<!-- Loading state -->
+<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 </div>
-
-
-<span id="filename"></span>
-
-@stop
-
 @section('scripts')
-<script src="/assets/js/jquery.form.js" type="text/javascript"></script>
-<script>
-$(document).ready(function() {
-    var options = {
-        beforeSubmit:  showRequest,
-        success:       showResponse,
-        dataType: 'json'
-    };
-    $('#image').on('change', function(){
-        $('#upload-avatar').html('正在上传...');
-        $('#upload').ajaxForm(options).submit();
-    });
-
-	function showRequest() {
-	    $("#validation-errors").hide().empty();
-	    $("#output").css('display','none');
-	    return true;
-	}
-
-	function showResponse(response)  {
-	    if(response.success == false)
-	    {
-	        var responseErrors = response.errors;
-	        $.each(responseErrors, function(index, value)
-	        {
-	            if (value.length != 0)
-	            {
-	                $("#validation-errors").append('<div class="alert alert-error"><strong>'+ value +'</strong><div>');
-	            }
-	        });
-	        $("#validation-errors").show();
-	    } else {
-
-			$('#user-avatar').attr('src',response.avatar);
-
-	    }
-	}
-});
-</script>
-
-@stop
+<script type="text/javascript" src="/assets/js/cropper.min.js"></script>
+<script type="text/javascript" src="/assets/js/upload_cropper.js"></script>
+@endsection
