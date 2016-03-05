@@ -88,6 +88,8 @@
 @stop
 
 @section('scripts')
+<script type="text/javascript" src="/assets/js/cropper.min.js"></script>
+<script type="text/javascript" src="/assets/js/upload_cropper.js"></script>
 <!-- <script type="text/javascript" src="/assets/js/dropzone.min.js"></script>
 <script>
   Dropzone.options.addAvatarForm = {

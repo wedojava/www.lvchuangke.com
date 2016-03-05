@@ -13,7 +13,7 @@
             <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
                 <div class="modal-header">
                     <button class="close" data-dismiss="modal" type="button">&times;</button>
-                    <h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+                    <h4 class="modal-title" id="avatar-modal-label">设置头像</h4>
                 </div>
                 <div class="modal-body">
                     <div class="avatar-body">
@@ -70,7 +70,3 @@
 <!-- Loading state -->
 <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 </div>
-@section('scripts')
-<script type="text/javascript" src="/assets/js/cropper.min.js"></script>
-<script type="text/javascript" src="/assets/js/upload_cropper.js"></script>
-@endsection
