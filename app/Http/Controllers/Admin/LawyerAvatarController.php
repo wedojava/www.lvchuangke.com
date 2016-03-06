@@ -21,6 +21,6 @@ class LawyerAvatarController extends Controller
 		$lawyer = Lawyer::findOrFail($id);
 		$lawyer_avatar = $reqeust->file('avatar_file');
 
-		(new AddAvatarToLawyer($lawyer, $lawyer_avatar))->save();
+		(new AddAvatarToLawyer($lawyer, $lawyer_avatar))->saveByID($id);
 	}	
 }
