@@ -29,23 +29,9 @@ class AddAvatarToLawyer
 
     public function saveByID($id)
     {
-    	if (!$this->avatarIsExist($id)) {
-	        $lawyer_avatar = $this->lawyer->addLawyerAvatar($this->makeLawyerAvatarByID($id));
-	        $this->file->move(LawyerAvatar::baseDir(), $lawyer_avatar->name);
-	        $this->thumbnail->make($lawyer_avatar->path, $lawyer_avatar->thumbnail_path);
-    	}else{
-    		$lawyer_id = $this->lawyerAvatar->lawyer_id;
-	        $lawyer_avatar = $this->lawyer->updateLawyerAvatar($this->makeLawyerAvatarByID($id), $id, $lawyer_id);
-	        $this->file->move(LawyerAvatar::baseDir(), $this->lawyerAvatar->name);
-	        $this->thumbnail->make($this->lawyerAvatar->path, $this->lawyerAvatar->thumbnail_path);
-    	}
-    }
-
-    public function avatarIsExist($id)
-    {
-        $this->lawyerAvatar = LawyerAvatar::where('lawyer_id', $id)->first();
-    	$isExist = ($this->lawyerAvatar->count() > 0) ? true : false;
-    	return $isExist;
+        $lawyer_avatar = $this->lawyer->setLawyerAvatar($this->makeLawyerAvatarByID($id), $id);
+        $this->file->move(LawyerAvatar::baseDir(), $lawyer_avatar->name);
+        $this->thumbnail->make($lawyer_avatar->path, $lawyer_avatar->thumbnail_path);
     }
 
     protected function makeLawyerAvatarByID($id)
