@@ -10,6 +10,7 @@ use App\Http\Requests\LawyerUpdateRequest;
 use App\Jobs\LawyerFormFields;
 use App\Lawyer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -117,12 +118,35 @@ class LawyerController extends Controller
      */
     public function destroy($id)
     {
-        $lawyer = Lawyer::findOrFail($id);
-        $lawyer->delete();
+        // $lawyer = Lawyer::findOrFail($id);        
+        // $lawyer->delete();
+        
+        $this->destroyLawyerAfterAvatar($id);
 
         return redirect()
             ->route('admin.lawyer.index')
             ->withSuccess('一条律师信息已删除！');
+    }
+
+    public function destroyLawyerAfterAvatar($id)
+    {
+        $lawyer = Lawyer::findOrFail($id);
+        $lawyer_avatar = $lawyer->lawyer_avatar;
+
+        if (File::exists($lawyer_avatar->path)) {
+            try{
+                File::delete($lawyer_avatar->path);
+                File::delete($lawyer_avatar->thumbnail_path);
+            }catch(Exception $e){
+                throw new Exception("头像文件删除失败！", $e->getMessage(), "\n");
+            }finally{
+                $lawyer->lawyer_avatar->delete();
+                $lawyer->delete();
+            }
+        }
+
+        return true;
+
     }
 
     // public function avatar($id)
