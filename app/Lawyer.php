@@ -29,6 +29,21 @@ class Lawyer extends Model
     {
         return $this->lawyer_avatar()->save($lawyer_avatar);
     }
+	public function updateLawyerAvatar(LawyerAvatar $lawyer_avatar, $id, $lawyer_id)
+    {
+        return $this->lawyer_avatar()
+        	->where('lawyer_id', $lawyer_id)
+        	->update([
+        		'name' => $lawyer_avatar->name,
+        		'path' => $lawyer_avatar->path,
+        		'thumbnail_path' => $lawyer_avatar->thumbnail_path
+    		]);
+		// return [
+  //       		'name' => $lawyer_avatar->name,
+  //       		'path' => $lawyer_avatar->path,
+  //       		'thumbnail_path' => $lawyer_avatar->thumbnail_path
+  //   		];
+    }
 
 	/**
 	 * Alias for description_raw

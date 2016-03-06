@@ -18,7 +18,7 @@ class LawyerAvatar extends Model
     	return $this->belongsTo('App\Lawyer');
     }
 
-    public function baseDir()
+    public static function baseDir()
     {
         // return 'uploads/avatars';
         return config('lvchuangke.lawyer_avatar');
@@ -31,4 +31,6 @@ class LawyerAvatar extends Model
         $this->path = $this->baseDir() . '/' . $name;
         $this->thumbnail_path = $this->baseDir() . '/tn-' . $name;
     }
+
+
 }
