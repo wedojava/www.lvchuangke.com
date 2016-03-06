@@ -17,126 +17,24 @@
 	                </p>
 	            </div>
             </div>
-			<div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
+            @foreach ($lawyers->all() as $lawyer)
+				<div class="lawyer__info">
+					<div class="lawyer__header">
+		                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
+		                </div>
+		                <h3 class="lawyer__header__name">
+		                    {{ $lawyer->username }}
+		                </h3>
+		                <p class="lawyer__header__role">
+		                    <i class="fa fa-graduation-cap"></i>专业领域：{{ $lawyer->professional_field }}
+		                </p>
+		                <p class="lawyer__header__role">
+		                    <i class="fa fa-legal"></i>职业证号：{{ $lawyer->occupation_no }}
+		                </p>
+		            </div>
 	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
-            <div class="lawyer__info">
-				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
-	                </div>
-	                <h3 class="lawyer__header__name">
-	                    Mike Babineau
-	                </h3>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>专业领域：民事诉讼
-	                </p>
-	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
-	                </p>
-	            </div>
-            </div>
+            @endforeach
+            
 
             <div class="front-section__signup awesome__button">
 	            <a href="/lawyers" class="btn--monster">更多律师</a>
