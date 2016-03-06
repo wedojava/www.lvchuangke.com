@@ -25,10 +25,10 @@ class Lawyer extends Model
 		return $this->hasOne('App\LawyerAvatar');
 	}
 
-	public function addLawyerAvatar(LawyerAvatar $lawyer_avatar)
-    {
-        return $this->lawyer_avatar()->save($lawyer_avatar);
-    }
+	// public function addLawyerAvatar(LawyerAvatar $lawyer_avatar)
+ //    {
+ //        return $this->lawyer_avatar()->save($lawyer_avatar);
+ //    }
 	public function setLawyerAvatar(LawyerAvatar $lawyer_avatar, $lawyer_id)
     {
         return $this->lawyer_avatar()
