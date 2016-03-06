@@ -17,8 +17,8 @@ class CreateLawyerAvatarsTable extends Migration
             $table->integer('lawyer_id')->unsigned();
             // $table->foreign('lawyer_id')->references('id')->on('lawyers')->onDelete('cascade');
             $table->string('name');
-            $table->string('path');
-            $table->string('thumbnail_path');
+            $table->string('path')->default('assets/image/avatar.svg');
+            $table->string('thumbnail_path')->default('assets/image/avatar.svg');
             $table->timestamps();
         });
     }
