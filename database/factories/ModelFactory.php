@@ -37,8 +37,8 @@ $factory->define(App\LawCase::class, function (Faker\Generator $faker) {
 $factory->define(App\Lawyer::class, function (Faker\Generator $faker) {
     return [
         'username' => $faker->name,
-        'professional_field' => $faker->name,
-        'occupation_no' => $faker->randomNumber,
+        'professional_field' => $faker->firstName,
+        'occupation_no' => $faker->numerify('##########'),
         'telephone' => $faker->phoneNumber,
         'email' => $faker->safeEmail,
         'QQ' => $faker->randomNumber,
@@ -49,7 +49,7 @@ $factory->define(App\Lawyer::class, function (Faker\Generator $faker) {
 
 $factory->define(App\LawOffice::class, function (Faker\Generator $faker) {
     return [
-        'officeName' => $faker->sentence(2),
+        'officeName' => $faker->sentence(3),
         'telephone' => $faker->phoneNumber,
         'description_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
     ];
@@ -57,7 +57,7 @@ $factory->define(App\LawOffice::class, function (Faker\Generator $faker) {
 
 $factory->define(App\SuccessfulCase::class, function (Faker\Generator $faker) {
     return [
-        'caseTitle' => $faker->sentence(mt_rand(3, 10)),
+        'caseTitle' => $faker->sentence(4),
         'caseDetail_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
         'lawyer' => $faker->name,
         'lawOffice' => $faker->sentence(2),
