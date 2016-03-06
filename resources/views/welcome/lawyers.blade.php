@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-7 col-md-offset-5">
 				<div class="lawyer__header">
-	                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
+	                <div class="lawyer__header__avatar" style="background-image: url('assets/image/avatar.svg');">
 	                </div>
 	                <h3 class="lawyer__header__name">
 	                    桑云
@@ -20,7 +20,7 @@
             @foreach ($lawyers->all() as $lawyer)
 				<div class="lawyer__info">
 					<div class="lawyer__header">
-		                <div class="lawyer__header__avatar" style="background-image: url('https://www.graphicsprings.com/filestorage/images/5/MikeBabineau.png?width=200&amp;height=200&amp;quality=80&amp;crop=0&amp;method=crop');">
+		                <div class="lawyer__header__avatar" style="background-image: url('assets/image/avatar.svg');">
 		                </div>
 		                <h3 class="lawyer__header__name">
 		                    {{ $lawyer->username }}
