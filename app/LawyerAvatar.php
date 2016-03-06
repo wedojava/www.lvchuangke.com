@@ -17,4 +17,17 @@ class LawyerAvatar extends Model
     {
     	return $this->belongsTo('App\Lawyer');
     }
+
+    public function baseDir()
+    {
+        return 'uploads/avatars';
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = $name;
+
+        $this->path = $this->baseDir() . '/' . $name;
+        $this->thumbnail_path = $this->baseDir() . '/tn-' . $name;
+    }
 }

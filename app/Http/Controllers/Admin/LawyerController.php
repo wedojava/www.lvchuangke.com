@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\AvatarCrop;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\LawyerCreateRequest;
@@ -124,50 +125,50 @@ class LawyerController extends Controller
             ->withSuccess('一条律师信息已删除！');
     }
 
-    public function avatar($id)
-    {
-        return view('admin.lawyer.avatar');
-    }
+    // public function avatar($id)
+    // {
+    //     return view('admin.lawyer.avatar');
+    // }
 
-    public function avatarUpload(Request $request)
-    {
-        $this->wrongTokenAjax($request);
-        $file = $request->file('image');
-        $input = array('image' => $file);
-        $rules = array('image' => 'image');
-        $validator = Validator::make($input, $rules);
-        if ($validator->fails()) {
-            return Response::json([
-                'success' => false,
-                'error' => $validator->getMessageBag()->toArray()
-            ]);
-        }
+    // public function avatarUpload(Request $request)
+    // {
+        // $this->wrongTokenAjax($request);
+        // $file = $request->file('image');
+        // $input = array('image' => $file);
+        // $rules = array('image' => 'image');
+        // $validator = Validator::make($input, $rules);
+        // if ($validator->fails()) {
+        //     return Response::json([
+        //         'success' => false,
+        //         'error' => $validator->getMessageBag()->toArray()
+        //     ]);
+        // }
 
-        $destinationPath = 'uploads/avatars';
-        $filename = 'lawyer_id.' . $request->id . '.avatar.' . $file->getClientOriginalExtension();
-        // $filename = $file->getClientOriginalName();
-        $file->move($destinationPath, $filename);
+        // $destinationPath = 'uploads/avatars';
+        // $filename = 'lawyer_id.' . $request->id . '.avatar.' . $file->getClientOriginalExtension();
+        // // $filename = $file->getClientOriginalName();
+        // $file->move($destinationPath, $filename);
 
-        return Response::json([
-            'success' => true,
-            'aratar' => asset($destinationPath . $filename),
-        ]);
+        // return Response::json([
+        //     'success' => true,
+        //     'aratar' => asset($destinationPath . $filename),
+        // ]);
 
         // 
         // $file = $request->file('image');
         // $name = 'lawyer_' . $request->id . '_avatar. ' . $file->getClientOriginalExtension();
         // $file->move('uploads/avatars', $name);
         // return 'Done';
-    }
+    // }
 
-    public function wrongTokenAjax(Request $request)
-    {
-        if (Session::token() !== $request->get('_token')) {
-            $response = [
-                'status' => false,
-                'error' => 'Wrong Token!',
-            ];
-            return Response::json($request);
-        }
-    }
+    // public function wrongTokenAjax(Request $request)
+    // {
+    //     if (Session::token() !== $request->get('_token')) {
+    //         $response = [
+    //             'status' => false,
+    //             'error' => 'Wrong Token!',
+    //         ];
+    //         return Response::json($request);
+    //     }
+    // }
 }

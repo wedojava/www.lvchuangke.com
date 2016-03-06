@@ -10,7 +10,8 @@
 <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+            <form class="avatar-form" action="avatar" enctype="multipart/form-data" method="post">
+                {{ csrf_field() }}
                 <div class="modal-header">
                     <button class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title" id="avatar-modal-label">设置头像</h4>
@@ -20,10 +21,10 @@
 
                         <!-- Upload image and data -->
                         <div class="avatar-upload">
-                            <input class="avatar-src" name="avatar_src" type="hidden"/>
-                            <input class="avatar-data" name="avatar_data" type="hidden"/>
+                            <input class="avatar-src" name="avatar_src" id="avatar_src" type="hidden"/>
+                            <input class="avatar-data" name="avatar_data" id="avatar_data" type="hidden"/>
                             <label for="avatarInput">头像上传</label>
-                            <input class="avatar-input" id="avatarInput" name="avatar_file" type="file"/>
+                            <input class="avatar-input" id="avatarInput" name="avatar_file" id="avatar_file" type="file"/>
                         </div>
 
                         <!-- Crop and preview -->

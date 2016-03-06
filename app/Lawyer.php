@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\LawyerAvatar;
 use App\Services\Markdowner;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,6 +24,11 @@ class Lawyer extends Model
 	{
 		return $this->hasOne('App\LawyerAvatar');
 	}
+
+	public function addLawyerAvatar(LawyerAvatar $lawyer_avatar)
+    {
+        return $this->lawyer_avatar()->save($lawyer_avatar);
+    }
 
 	/**
 	 * Alias for description_raw

@@ -21,5 +21,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'auth']], function
     Route::resource('admin/successful_case', 'SuccessfulCaseController');
     Route::resource('admin/about', 'AboutController');
     Route::get('admin/lawyer/{id}/avatar', 'LawyerController@avatar');
-    Route::post('admin/lawyer/{id}/avatar', 'LawyerController@avatarUpload');
+    // Route::post('admin/lawyer/{id}/avatar', 'LawyerController@avatarUpload');
+    Route::post('admin/lawyer/{id}/avatar', ['as' => 'store_avatar_path', 'uses' => 'LawyerAvatarController@store']);
 });
