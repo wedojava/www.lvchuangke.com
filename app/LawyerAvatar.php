@@ -20,7 +20,8 @@ class LawyerAvatar extends Model
 
     public function baseDir()
     {
-        return 'uploads/avatars';
+        // return 'uploads/avatars';
+        return config('lvchuangke.lawyer_avatar');
     }
 
     public function setNameAttribute($name)

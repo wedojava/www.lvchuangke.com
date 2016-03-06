@@ -26,10 +26,29 @@ class AddAvatarToLawyer
         $this->thumbnail->make($lawyer_avatar->path, $lawyer_avatar->thumbnail_path);
     }
 
+    public function saveByID($id = '')
+    {
+        $lawyer_avatar = $this->lawyer->addLawyerAvatar($this->makeLawyerAvatarByID($id));
+        $this->file->move($lawyer_avatar->baseDir(), $lawyer_avatar->name);
+        $this->thumbnail->make($lawyer_avatar->path, $lawyer_avatar->thumbnail_path);
+    }
+
+    protected function makeLawyerAvatarByID($id)
+    {
+    	return new LawyerAvatar(['name' => $this->makeFileNameByID($id)]);
+    }
+
+    protected function makeFileNameByID($id)
+    {
+    	$name = "lawyerID_{$id}_avatar.{$this->file->getClientOriginalExtension()}";
+    	return $name;
+    }
+
     protected function makeLawyerAvatar()
     {
         return new LawyerAvatar(['name' => $this->makeFileName()]);
     }
+
 
     protected function makeFileName()
     {
