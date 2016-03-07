@@ -64,10 +64,9 @@
                       <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
                     </div> -->
                 </form>
+                <!-- Loading state -->
+                <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
             </div>
         </div>
     </div><!-- /.modal -->
-
-    <!-- Loading state -->
-    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 </div>
