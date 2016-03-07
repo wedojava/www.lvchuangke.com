@@ -9,7 +9,7 @@ class Thumbnail
     public function make($src, $destination)
     {
         Image::make($src)
-            ->fit(200)
+            ->fit(400)
             ->save($destination);
     }
 }

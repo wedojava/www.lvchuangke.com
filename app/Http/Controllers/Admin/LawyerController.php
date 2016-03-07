@@ -87,7 +87,7 @@ class LawyerController extends Controller
                     ->where('lawyer_id', $id)->first();
 
         return view('admin.lawyer.edit', $data)
-                ->withAvatar(($lawyer_avatar != null) ? $lawyer_avatar->path : 'assets/image/avatar.svg');
+                ->withAvatar(($lawyer_avatar != null) ? $lawyer_avatar->thumbnail_path : 'assets/image/avatar.svg');
     }
 
     /**
