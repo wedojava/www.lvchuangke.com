@@ -82,8 +82,12 @@ class LawyerController extends Controller
     public function edit($id)
     {
         $data = $this->dispatch(new LawyerFormFields($id));
+        $lawyer = Lawyer::findOrFail($id);
+        $lawyer_avatar = $lawyer->lawyer_avatar()
+                    ->where('lawyer_id', $id)->first();
 
-        return view('admin.lawyer.edit', $data);
+        return view('admin.lawyer.edit', $data)
+                ->withAvatar(($lawyer_avatar != null) ? $lawyer_avatar : '/assets/image/avatar.svg');
     }
 
     /**
