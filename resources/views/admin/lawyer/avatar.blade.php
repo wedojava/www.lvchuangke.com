@@ -3,7 +3,7 @@
 
     <!-- Current avatar -->
     <div class="avatar-view" title="点击设置头像">
-        <img src="/{{ $avatar->thumbnail_path }}" alt="Avatar"/>
+        <img src="/{{ $avatar }}" alt="Avatar"/>
     </div>
     <div style="text-align:center;color:red;margin:50px 0">提示：点击头像上传</div>
     <!-- Cropping modal -->
