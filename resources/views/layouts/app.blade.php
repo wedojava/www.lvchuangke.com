@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    律创客
+                    <img src="{{ asset('assets/image/logo.svg') }}" alt="" height="60px">
                 </a>
             </div>
 

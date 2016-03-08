@@ -8754,11 +8754,12 @@ body {
   padding-top: 40px;
 }
 .lck-navbar {
-  min-height: 70px;
+  min-height: 100px;
+  margin-bottom: 0;
 }
 .lck-navbar a,
 .lck-navbar li a {
-  line-height: 40px;
+  line-height: 3.9em;
   background-color: transparent !important;
 }
 .lck-jumbotron .jumbotron h1 {
