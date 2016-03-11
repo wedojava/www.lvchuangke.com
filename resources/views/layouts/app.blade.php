@@ -47,9 +47,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">律师团</a></li>
-                    <li><a href="{{ url('/home') }}">盟友</a></li>
-                    <li><a href="{{ url('/home') }}">案例</a></li>
+                    <li><a href="{{ url('#lawyers') }}">律师团</a></li>
+                    <li><a href="{{ url('#lawoffices') }}">盟友</a></li>
+                    <li><a href="{{ url('#successfulcases') }}">案例</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

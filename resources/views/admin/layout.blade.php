@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('lvchuangke.title') }} 内容</title>
+        <title>{{ config('lvchuangke.title') }}</title>
 
         <link href="/assets/css/lvchuangke.css" rel="stylesheet">
         @yield('styles')
