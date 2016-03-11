@@ -20,8 +20,14 @@
             @foreach ($lawyers->all() as $lawyer)
 				<div class="lawyer__info">
 					<div class="lawyer__header">
-		                <div class="lawyer__header__avatar" style="background-image: url('assets/image/avatar.svg');">
+		                <div class="lawyer__header__avatar" 
+		                	style="background-image: 
+		                	url('{{ 
+									($lawyer->lawyer_avatars['thumbnail_path'] == "") ? "assets/image/avatar.svg" : $lawyer->lawyer_avatars->thumbnail_path
+		                		 }}');">
 		                </div>
+		                <!-- <div class="lawyer__header__avatar" style="background-image: url('assets/image/avatar.svg');">
+		                </div> -->
 		                <h3 class="lawyer__header__name">
 		                    {{ $lawyer->username }}
 		                </h3>

@@ -20,7 +20,7 @@ class Lawyer extends Model
         'reverse_directions' => 0,
 	];
 
-	public function lawyer_avatar()
+	public function lawyer_avatars()
 	{
 		return $this->hasOne('App\LawyerAvatar');
 	}
@@ -31,7 +31,7 @@ class Lawyer extends Model
  //    }
 	public function setLawyerAvatar(LawyerAvatar $lawyer_avatar, $lawyer_id)
     {
-        return $this->lawyer_avatar()
+        return $this->lawyer_avatars()
 			        ->updateOrCreate(['lawyer_id' => $lawyer_id], [
 		        		'name' => $lawyer_avatar->name,
 		        		'path' => $lawyer_avatar->path,

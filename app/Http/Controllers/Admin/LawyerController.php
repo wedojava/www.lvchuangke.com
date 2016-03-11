@@ -83,7 +83,7 @@ class LawyerController extends Controller
     {
         $data = $this->dispatch(new LawyerFormFields($id));
         $lawyer = Lawyer::findOrFail($id);
-        $lawyer_avatar = $lawyer->lawyer_avatar()
+        $lawyer_avatar = $lawyer->lawyer_avatars()
                     ->where('lawyer_id', $id)->first();
 
         return view('admin.lawyer.edit', $data)
@@ -135,7 +135,7 @@ class LawyerController extends Controller
     public function destroyLawyerAfterAvatar($id)
     {
         $lawyer = Lawyer::findOrFail($id);
-        $lawyer_avatar = $lawyer->lawyer_avatar;
+        $lawyer_avatar = $lawyer->lawyer_avatars;
 
         if (File::exists($lawyer_avatar->path)) {
             try{
@@ -144,7 +144,7 @@ class LawyerController extends Controller
             }catch(Exception $e){
                 throw new Exception("头像文件删除失败！", $e->getMessage(), "\n");
             }finally{
-                $lawyer->lawyer_avatar->delete();
+                $lawyer->lawyer_avatars->delete();
                 $lawyer->delete();
             }
         }
