@@ -76,7 +76,7 @@
     </nav>
 
     @yield('content')
-
+    @include('welcome.footer')
     <!-- JavaScripts -->
     <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/js/lvchuangke.js') }}"></script>
