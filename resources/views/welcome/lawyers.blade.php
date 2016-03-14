@@ -1,6 +1,6 @@
 <div class="lawyers" id="lawyers">
 	<div class="container">
-		<h1>我们的团队</h1>
+		<h1 class="h1-shadow">我们的团队</h1>
 		<div class="row">
 			<div class="col-md-7 col-md-offset-5">
 				<div class="lawyer__header">

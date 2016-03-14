@@ -5,7 +5,7 @@
 @section('content')
 <div class="lawyers lck-toppadding" id="lawyers">
     <div class="container">
-        <h1>律师团队</h1>
+        <h1 class="h1-shadow">律师团队</h1>
         <div class="row">
             <div class="col-md-7 col-md-offset-5">
                 <div class="lawyer__header">
