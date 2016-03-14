@@ -3,6 +3,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'WelcomeController@index');
 });
 
+Route::group(['namespace' => 'DataIndex', 'middleware' => 'web'], function(){
+    Route::get('/lawyers', 'LawyerIndexController@index');
+});
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::post('/guestcase', 'GuestCaseController@store');

@@ -60,5 +60,4 @@
 @include('welcome.lawyers')
 @include('welcome.lawoffices')
 @include('welcome.successfulcases')
-@include('welcome.footer')
 @endsection
