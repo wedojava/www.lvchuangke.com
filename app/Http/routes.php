@@ -5,6 +5,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['namespace' => 'DataIndex', 'middleware' => 'web'], function(){
     Route::get('/lawyers', 'LawyerIndexController@index');
+    Route::get('/law_offices', 'LawOfficeIndexController@index');
 });
 
 Route::group(['middleware' => 'web'], function () {
