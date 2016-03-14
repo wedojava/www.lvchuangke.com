@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('navbar')
+  @include('layouts.nav')
+@stop
 @section('content')
 <div class="lck-jumbotron">
   <div class="container">
