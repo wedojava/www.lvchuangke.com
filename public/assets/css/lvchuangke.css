@@ -8784,6 +8784,12 @@ body {
 .lck-min-height {
   min-height: 700px;
 }
+.h1-shadow {
+  padding-bottom: 0.4em;
+  font-size: 54px;
+  text-align: center;
+  text-shadow: 3px 2px 0px #dde7f7, 5px 3px 0px rgba(0, 0, 0, 0.15);
+}
 .lck-navbar .navbar-default .navbar-nav > .open > a,
 .lck-navbar .navbar-default .navbar-nav > .open > a:hover,
 .lck-navbar .navbar-default .navbar-nav > .open > a:focus {
@@ -9054,12 +9060,6 @@ body {
   padding: 90px 8% 65px 8%;
   background-color: #dde7f7;
 }
-.lawyers h1,
-.lawoffices h1 {
-  font-size: 54px;
-  text-align: center;
-  text-shadow: 3px 2px 0px #dde7f7, 5px 3px 0px rgba(0, 0, 0, 0.15);
-}
 .lawyer__info {
   float: left;
   display: block;
@@ -9089,6 +9089,11 @@ body {
   line-height: 2.7rem;
   margin-bottom: 0;
   padding-top: 0px;
+  width: 8em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lawyer__header__role {
   color: #134a6a;
@@ -9120,6 +9125,7 @@ body {
   margin-bottom: 30px;
 }
 .lck-list__element {
+  display: inline-block;
   list-style: none;
   font-size: 18px;
   line-height: 27px;
@@ -9127,6 +9133,11 @@ body {
   line-height: 2.7rem;
   color: #222;
   margin-bottom: 0;
+  width: 30em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .lck-list__element a {
   color: #222;
