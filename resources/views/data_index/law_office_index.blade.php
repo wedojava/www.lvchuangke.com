@@ -1,7 +1,9 @@
 @extends('layouts.app')
-
+@section('navbar')
+  @include('layouts.nav_index')
+@stop
 @section('content')
-<div class="lawoffices" id="lawoffices">
+<div class="lawoffices lck-min-height" id="lawoffices">
 	<div class="container">
 		<h1 class="Heading--Fancy">
 	        <span>加盟律所</span>

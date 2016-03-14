@@ -8781,6 +8781,9 @@ body {
   background: #fff;
   color: #134a6a;
 }
+.lck-min-height {
+  min-height: 700px;
+}
 .lck-navbar .navbar-default .navbar-nav > .open > a,
 .lck-navbar .navbar-default .navbar-nav > .open > a:hover,
 .lck-navbar .navbar-default .navbar-nav > .open > a:focus {
@@ -9051,7 +9054,8 @@ body {
   padding: 90px 8% 65px 8%;
   background-color: #dde7f7;
 }
-.lawyers h1 {
+.lawyers h1,
+.lawoffices h1 {
   font-size: 54px;
   text-align: center;
   text-shadow: 3px 2px 0px #dde7f7, 5px 3px 0px rgba(0, 0, 0, 0.15);
