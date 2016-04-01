@@ -10,10 +10,10 @@
 	                    桑云
 	                </h3>
 	                <p class="lawyer__header__role">
-	                    <i class="fa fa-graduation-cap"></i>新疆律师协会会长
+	                    <i class="fa fa-graduation-cap"></i>新疆律师协会会长：民商、刑事、非诉
 	                </p>
 	                <p class="lawyer__header__role">
-	                    <i class="fa fa-legal"></i>职业证号：1234567789
+	                    <i class="fa fa-legal"></i>执业证号：16501199110268222
 	                </p>
 	            </div>
             </div>
@@ -35,7 +35,7 @@
 		                    <i class="fa fa-graduation-cap"></i>专业领域：{{ $lawyer->professional_field }}
 		                </p>
 		                <p class="lawyer__header__role">
-		                    <i class="fa fa-legal"></i>职业证号：{{ $lawyer->certified_no }}
+		                    <i class="fa fa-legal"></i>执业证号：{{ $lawyer->certified_no }}
 		                </p>
 		            </div>
 	            </div>
