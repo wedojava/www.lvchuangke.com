@@ -147,6 +147,8 @@ class LawyerController extends Controller
                 $lawyer->lawyer_avatars->delete();
                 $lawyer->delete();
             }
+        }else{
+            $lawyer->delete();
         }
 
         return true;
