@@ -28,7 +28,7 @@
                             <th class="hidden-md">执业证号</th>
                             <th class="hidden-md">执业年限</th>
                             <th class="hidden-md">联系电话</th>
-                            <th class="hidden-sm">电子邮件</th>
+                            <th class="hidden-sm">Email</th>
                             <th class="hidden-sm">QQ</th>
                             <th class="hidden-md">简介</th>
                             <th data-sortable="false">管理</th>
