@@ -35,7 +35,7 @@
 		                    <i class="fa fa-graduation-cap"></i>专业领域：{{ $lawyer->professional_field }}
 		                </p>
 		                <p class="lawyer__header__role">
-		                    <i class="fa fa-legal"></i>职业证号：{{ $lawyer->occupation_no }}
+		                    <i class="fa fa-legal"></i>职业证号：{{ $lawyer->certified_no }}
 		                </p>
 		            </div>
 	            </div>
