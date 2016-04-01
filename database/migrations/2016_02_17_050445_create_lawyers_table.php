@@ -19,7 +19,7 @@ class CreateLawyersTable extends Migration
             $table->string('certified_no');
             $table->string('certified_ages');
             $table->string('telephone');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('QQ');
             $table->text('description_raw');
             $table->text('description_html');
