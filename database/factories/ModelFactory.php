@@ -38,11 +38,11 @@ $factory->define(App\Lawyer::class, function (Faker\Generator $faker) {
     return [
         'username' => $faker->name,
         'professional_field' => $faker->firstName,
-        'occupation_no' => $faker->numerify('##########'),
+        'certified_no' => $faker->numerify('##########'),
+        'certified_ages' => $faker->numerify('##'),
         'telephone' => $faker->phoneNumber,
         'email' => $faker->safeEmail,
         'QQ' => $faker->randomNumber,
-        'weibo' => $faker->userName,
         'description_raw' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
     ];
 });

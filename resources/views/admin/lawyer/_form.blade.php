@@ -17,12 +17,21 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="occupation_no" class="col-md-2 control-label">
-         职业证号
+      <label for="certified_no" class="col-md-2 control-label">
+         执业证号
       </label>
       <div class="col-md-10">
-        <input type="text" class="form-control" name="occupation_no"
-               id="occupation_no" value="{{ $occupation_no }}">
+        <input type="text" class="form-control" name="certified_no"
+               id="certified_no" value="{{ $certified_no }}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="certified_ages" class="col-md-2 control-label">
+         执业年限
+      </label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="certified_ages"
+               id="certified_ages" value="{{ $certified_ages }}">
       </div>
     </div>
     <div class="form-group">

@@ -25,7 +25,8 @@
                             <th class="hidden-sm">相片</th>
                             <th class="hidden-sm">姓名</th>
                             <th class="hidden-md">专业领域</th>
-                            <th class="hidden-md">职业证号</th>
+                            <th class="hidden-md">执业证号</th>
+                            <th class="hidden-md">执业年限</th>
                             <th class="hidden-md">联系电话</th>
                             <th class="hidden-sm">电子邮件</th>
                             <th class="hidden-sm">QQ</th>
@@ -40,7 +41,8 @@
                                 <td class="hidden-sm"><img src="/{{ ($lawyer->lawyer_avatars['thumbnail_path'] == "") ? "assets/image/avatar.svg" : $lawyer->lawyer_avatars->thumbnail_path }}" alt="" width="100" height="100"></td>
                                 <td class="hidden-sm">{{ $lawyer->username }}</td>
                                 <td class="hidden-md">{{ $lawyer->professional_field }}</td>
-                                <td class="hidden-md">{{ $lawyer->occupation_no }}</td>
+                                <td class="hidden-md">{{ $lawyer->certified_no }}</td>
+                                <td class="hidden-md">{{ $lawyer->certified_ages }}</td>
                                 <td class="hidden-md">{{ $lawyer->telephone }}</td>
                                 <td class="hidden-sm">{{ $lawyer->email }}</td>
                                 <td class="hidden-sm">{{ $lawyer->QQ }}</td>
