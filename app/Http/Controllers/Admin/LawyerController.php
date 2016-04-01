@@ -137,16 +137,15 @@ class LawyerController extends Controller
         $lawyer = Lawyer::findOrFail($id);
         $lawyer_avatar = $lawyer->lawyer_avatars;
 
-        if ($lawyer_avatar != null || File::exists($lawyer_avatar->path)) {
+        if ($lawyer_avatar != null && File::exists($lawyer_avatar->path)) {
             try{
                 File::delete($lawyer_avatar->path);
                 File::delete($lawyer_avatar->thumbnail_path);
             }catch(Exception $e){
                 throw new Exception("头像文件删除失败！", $e->getMessage(), "\n");
-            }finally{
-                $lawyer->lawyer_avatars->delete();
-                $lawyer->delete();
             }
+            $lawyer->lawyer_avatars->delete();
+            $lawyer->delete();
         }else{
             $lawyer->delete();
         }
