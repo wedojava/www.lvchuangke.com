@@ -91,4 +91,20 @@ class PostController extends Controller
             ->route('admin.post.index')
             ->withSuccess('新闻更改保存成功！');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('新闻已删除！');
+    }
 }
