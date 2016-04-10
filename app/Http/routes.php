@@ -30,4 +30,13 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'auth']], function
     Route::get('admin/lawyer/{id}/avatar', 'LawyerController@avatar');
     // Route::post('admin/lawyer/{id}/avatar', 'LawyerController@avatarUpload');
     Route::post('admin/lawyer/{id}/avatar', ['as' => 'store_avatar_path', 'uses' => 'LawyerAvatarController@store']);
+
+    // 在这一行下面
+    Route::get('admin/upload', 'UploadController@index');
+
+    // 添加如下路由
+    Route::post('admin/upload/file', 'UploadController@uploadFile');
+    Route::delete('admin/upload/file', 'UploadController@deleteFile');
+    Route::post('admin/upload/folder', 'UploadController@createFolder');
+    Route::delete('admin/upload/folder', 'UploadController@deleteFolder');
 });
