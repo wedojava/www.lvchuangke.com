@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Jobs\Job;
 use App\Jobs\fieldsFromModel;
+use App\Post;
 
 class PostFormFields extends Job
 {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\PostCreateRequest;
+use App\Http\Requests\PostUpdateRequest;
 use App\Jobs\PostFormFields;
 use App\Post;
 use Illuminate\Http\Request;
@@ -52,5 +53,42 @@ class PostController extends Controller
         return redirect()
             ->route('admin.post.index')
             ->withSuccess('新闻添加成功！');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $data = $this->dispatch(new PostFormFields($id));
+
+        return view('admin.post.edit', $data);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(PostUpdateRequest $request, $id)
+    {
+        $post = Post::findOrFail($id);
+        $post->fill($request->postFillData());
+        $post->save();
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('新闻更改保存成功！');
+        }
+
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('新闻更改保存成功！');
     }
 }
