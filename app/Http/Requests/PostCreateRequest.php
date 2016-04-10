@@ -25,6 +25,7 @@ class PostCreateRequest extends Request
     {
         return [
             'title' => 'required',
+            'page_image' => '',
             'content' => 'required',
         ];
     }
@@ -38,6 +39,7 @@ class PostCreateRequest extends Request
     {
         return [
             'title' => $this->title,
+            'page_image' => $this->page_image,
             'content_raw' => $this->get('content'),
         ];
     }

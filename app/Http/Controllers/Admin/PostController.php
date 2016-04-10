@@ -44,12 +44,16 @@ class PostController extends Controller
     {
         $post = Post::create($request->postFillData());
 
+        // if ($request->action === 'add_photo') {
+        //     return redirect(post_path($post))
+        //         ->withSuccess('请添加图片，如无需要直接关闭或保存即可。');
+        // }
         if ($request->action === 'continue') {
             return redirect()
                 ->back()
-                ->withSuccess('新闻添加成功！');
+                ->withSuccess('新闻更改保存成功！');
         }
-
+        
         return redirect()
             ->route('admin.post.index')
             ->withSuccess('新闻添加成功！');

@@ -35,3 +35,13 @@ function lawyer_avatar($value = null)
 
     return $value;
 }
+
+/**
+ * The Path to a given post
+ * @param  App\Post  $post
+ * @return string
+ */
+function post_path(App\Post $post)
+{
+    return 'admin/post/' . $post->id . '/edit';
+}

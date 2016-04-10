@@ -31,12 +31,12 @@
                             <button type="submit" class="btn btn-primary btn-lg"
                                     name="action" value="continue">
                               <i class="fa fa-floppy-o"></i>
-                              保存 - 并继续添加
+                              保存并继续添加
                             </button>
                             <button type="submit" class="btn btn-success btn-lg"
                                     name="action" value="finished">
                               <i class="fa fa-floppy-o"></i>
-                              保存 - 并返回列表
+                              保存并返回
                             </button>
                           </div>
                         </div>
