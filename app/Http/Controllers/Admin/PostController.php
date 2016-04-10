@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Requests\PostCreateRequest;
+use App\Jobs\PostFormFields;
+use App\Post;
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('admin.post.index')
+            ->withPosts(Post::all());
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $data = $this->dispatch(new PostFormFields());
+        return view('admin.post.create', $data);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(PostCreateRequest $request)
+    {
+        $post = Post::create($request->postFillData());
+
+        if ($request->action === 'continue') {
+            return redirect()
+                ->back()
+                ->withSuccess('新闻添加成功！');
+        }
+
+        return redirect()
+            ->route('admin.post.index')
+            ->withSuccess('新闻添加成功！');
+    }
+}

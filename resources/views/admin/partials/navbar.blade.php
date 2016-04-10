@@ -13,6 +13,9 @@
         <li @if (Request::is('admin/successful_case*')) class="active" @endif>
             <a href="/admin/successful_case">案例</a>
         </li>
+        <li @if (Request::is('admin/post*')) class="active" @endif>
+            <a href="/admin/post">新闻</a>
+        </li>
         <li @if (Request::is('admin/about*')) class="active" @endif>
             <a href="/admin/about">关于</a>
         </li>
