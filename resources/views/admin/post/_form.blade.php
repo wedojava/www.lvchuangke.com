@@ -25,7 +25,7 @@
         内容
       </label>
       <div class="col-md-10">
-        <textarea class="form-control" name="content" rows="5"
+        <textarea class="form-control" name="content" rows="15"
                   id="content">{{ $content }}</textarea>
       </div>
     </div>
