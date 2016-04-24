@@ -45,6 +45,16 @@ gulp.task("copyfiles", function() {
     gulp.src("vendor/bower_dl/cropper/dist/cropper.min.css")
         .pipe(gulp.dest("public/assets/css/"));
 
+    // 拷贝 slick 脚本和样式库
+    gulp.src("vendor/bower_dl/slick-carousel/slick/slick.min.js")
+        .pipe(gulp.dest("public/assets/js/"));
+    gulp.src("vendor/bower_dl/slick-carousel/slick/slick.min.css")
+        .pipe(gulp.dest("public/assets/css/"));
+    gulp.src("vendor/bower_dl/slick-carousel/slick/slick-theme.css")
+        .pipe(gulp.dest("public/assets/css/"));
+    gulp.src("vendor/bower_dl/slick-carousel/slick/fonts/**")
+        .pipe(gulp.dest("public/assets/fonts"));
+
     // 拷贝 jquery.form.js
     gulp.src("vendor/bower_dl/jquery-form/jquery.form.js")
         .pipe(gulp.dest("public/assets/js/"));
