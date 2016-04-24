@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/slick.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/lvchuangke.css') }}" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -31,6 +33,7 @@
     @include('welcome.footer')
     <!-- JavaScripts -->
     <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/lvchuangke.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     @include('layouts.flash')
