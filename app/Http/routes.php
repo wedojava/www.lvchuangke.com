@@ -2,6 +2,7 @@
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'WelcomeController@index');
     Route::get('post/{id}', 'Admin\PostController@show');
+    Route::get('posts', 'Admin\PostController@showall');
 });
 
 Route::group(['namespace' => 'DataIndex', 'middleware' => 'web'], function(){

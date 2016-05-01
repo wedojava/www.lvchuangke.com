@@ -71,6 +71,17 @@ class PostController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showall()
+    {
+        return view("data_index.posts_index")->withPosts(Post::all());
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
