@@ -8,7 +8,21 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-8">
-            {!! $about->detail_html !!}
+            <div class="carousel">
+              <div class="item">
+                {!! $about->detail_html !!}
+              </div>
+              @foreach($posts->all() as $post)
+                <a href="#">
+                  <div class="item img-rounded" 
+                  style="background: url({{$post->page_image}});background-size:cover;">
+                  </div>
+                  <div class="item-title text-center">
+                    {{$post->title}}
+                  </div>
+                </a>
+              @endforeach
+            </div>
         </div>
         <div class="col-md-4">
           <form class="form-horizontal" method="POST" action="/guestcase" enctype="multipart/form-data">

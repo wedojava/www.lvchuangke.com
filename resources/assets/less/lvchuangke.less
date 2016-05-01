@@ -93,6 +93,7 @@ body { padding-top: 70px; font-size:16px;}
 }
 
 .lck-jumbotron, .lck-jumbotron .jumbotron{
+    margin-bottom:0;
 	color:#dde7f7;
 	background: #134a6a;
 }
@@ -102,6 +103,40 @@ body { padding-top: 70px; font-size:16px;}
 .lck-jumbotron form{
     padding-top: 40px;
 }
+
+/* carousel */
+.carousel .item{
+    height: 19em;
+    margin-top: 1.5em;
+    overflow: hidden;
+}
+.carousel .slick-next{
+    right: -35px;
+    z-index: 1;
+}
+.carousel .slick-prev{
+    left: -35px;
+    z-index: 1;
+}
+
+.carousel a:hover{
+    text-decoration: none;
+}
+.carousel .item h1{
+    margin-top:0;
+}
+.carousel .item-title{
+    margin-top: -2.5em;
+    line-height: 2.5em;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0 0 6px 6px;
+}
+.carousel .item-title:hover{
+    color:wheat;
+}
+
+/* btn */
 .btn-lck-xm{
 	color:#fff !important;
     margin-bottom: 1px;

@@ -17,7 +17,7 @@
             <a href="/admin/post">新闻</a>
         </li>
         <li @if (Request::is('admin/upload*')) class="active" @endif>
-            <a href="/admin/upload"> 上传</a>
+            <a href="/admin/upload">文件</a>
         </li>
         <li @if (Request::is('admin/about*')) class="active" @endif>
             <a href="/admin/about">关于</a>
