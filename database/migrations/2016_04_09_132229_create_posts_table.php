@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('content_raw');
             $table->string('content_html');
-            $table->string('page_image');
+            $table->string('page_image')->default("/uploads/news/default.jpg");
             $table->timestamps();
         });
     }

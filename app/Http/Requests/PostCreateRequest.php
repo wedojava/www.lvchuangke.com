@@ -39,7 +39,7 @@ class PostCreateRequest extends Request
     {
         return [
             'title' => $this->title,
-            'page_image' => $this->page_image,
+            'page_image' => ($this->page_image != "") ? $this->page_image : "/uploads/news/default.jpg",
             'content_raw' => $this->get('content'),
         ];
     }
