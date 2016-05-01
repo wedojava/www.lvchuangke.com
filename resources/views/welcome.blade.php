@@ -13,7 +13,7 @@
                 {!! $about->detail_html !!}
               </div>
               @foreach($posts->all() as $post)
-                <a href="#">
+                <a href="post/{{ $post->id }}">
                   <div class="item img-rounded" 
                   style="background: url({{$post->page_image}});background-size:cover;">
                   </div>
